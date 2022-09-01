@@ -1,10 +1,12 @@
-import React from 'react'
-import Home from '../Screens/Home'
+import React from 'react';
+import Routes from '../Routes/Routes';
 
 const Layout = () => {
-  return (
-    <Home/>
-  )
+    return (
+        <React.Fragment>
+            <Routes />
+        </React.Fragment>
+    )
 }
 
 export default Layout
