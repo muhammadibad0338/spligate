@@ -1,5 +1,5 @@
 import React from 'react'
-import {Routes,BrowserRouter,Route, } from "react-router-dom"
+import {Routes,Route, } from "react-router-dom"
 import Home from '../Screens/Home'
 import { withRouter } from './WithRouter'
 
