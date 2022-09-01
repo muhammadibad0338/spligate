@@ -4,8 +4,7 @@ import Layout from './Layout/Layout';
 
 const theme = createTheme({
   typography: {
-    fontFamily: ["Nunito-Regular", "sans-serif"].join(","),
-    fontSize: 12,
+    fontFamily: ["Motserrat", "sans-serif"].join(",")
   },
   overrides: {
     MuiButton: {

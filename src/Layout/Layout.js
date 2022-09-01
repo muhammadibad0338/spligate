@@ -13,7 +13,7 @@ const Layout = () => {
     return (
         <React.Fragment>
             {
-                largeScreens ?
+                true ?
                     <NavBar/> :
                     <MobileNav/>
             }
