@@ -37,6 +37,26 @@
   }
 } */
 *{
-  padding: 0px;
+  padding: 0px ;
   margin: 0px;
 }
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(11, 174, 206);
+  border-width: 1px;
+  border-style: solid;
+  background-color: rgb(11, 174, 206);
+  border-radius: 3px; 
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(23, 29, 41);
+  border-width: 1px;
+  border-style: none;
+  background-color: rgb(23, 29, 41);
+  border-radius: 3px;
+}
+ 

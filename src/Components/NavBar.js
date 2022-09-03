@@ -38,14 +38,14 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         textTransform: 'upperCase',
         fontFamily: '',
-        fontSize: '18px !important',
+        fontSize: '16px !important',
         lineHeight: '15px',
-        fontWeight: '550px !important',
+        fontWeight: '600px !important',
         textAlign: 'center',
         [theme.breakpoints.down("lg")]: {
             fontSize: '14px !important',
             lineHeight: '18px',
-            fontWeight: '550px !important'
+            fontWeight: '600px !important'
         },
     },
     listItem: {
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: '',
         fontSize: '14px !important',
         lineHeight: '15px',
-        fontWeight: '550px',
+        fontWeight: '500 !important',
         textAlign: 'right',
         // [theme.breakpoints.down("lg")]: {
         //     fontSize: '14px !important',
@@ -77,6 +77,22 @@ const useStyles = makeStyles((theme) => ({
             transition: '0.2 s'
         }
     },
+    navItemBtnIcon: {
+        maxWidth: '940px',
+        height: '100%',
+        // padding: '0px 14px',
+        padding: '10px 25px 5px 10px',
+        backgroundColor: 'black',
+        '&:hover': {
+            borderBottom: "2px solid #6DC2D3",
+            cursor: 'pointer',
+            "& p": {
+                color: '#6DC2D3',
+                transition: '0.2 s'
+            },
+            transition: '0.2 s'
+        }
+    },
     navItemList: {
         maxWidth: '100%',
         height: '40px',
@@ -90,6 +106,17 @@ const useStyles = makeStyles((theme) => ({
                 transition: '0.2 s'
             },
             transition: '0.2 s'
+        }
+    },
+    appBarMenu: {
+        '& .MuiPaper-root': {
+            padding: '10px 25px 10px 15px',
+            backgroundColor: 'black',
+            borderRadius: '0px',
+            boxShadow: 'none',
+            '& .MuiMenu-list': {
+                color: 'white'
+            },
         }
     }
 }));
@@ -159,12 +186,11 @@ const NavBar = (props) => {
     }
 
 
-    const openAppbarNavItem = (event,haveMenu) => {
-        if(haveMenu)
-        {
+    const openAppbarNavItem = (event, haveMenu) => {
+        if (haveMenu) {
             setAnchorEl(event.currentTarget);
         }
-        else{
+        else {
             setAnchorEl(null)
         }
     }
@@ -195,11 +221,11 @@ const NavBar = (props) => {
                                 {navItems.map((item, ind) => (
                                     <div>
                                         <Button className={classes.navItemBtn}
-                                            id={item+"button"}
-                                            aria-controls={open ? (item+"menu") : undefined}
-                                            aria-haspopup="true"
-                                            aria-expanded={open ? 'true' : undefined}
-                                            onClick={(e) => openAppbarNavItem(e,item.showIcon)}
+                                            id={item + "button"}
+                                            // aria-controls={open ? (item + "menu") : undefined}
+                                            // aria-haspopup="true"
+                                            // aria-expanded={open ? 'true' : undefined}
+                                            onClick={(e) => openAppbarNavItem(e, item.showIcon)}
                                         >
                                             <Typography key={item} className={classes.navItem} >
                                                 {item.nav}
@@ -209,22 +235,31 @@ const NavBar = (props) => {
                                             }
                                         </Button>
                                         <Menu
-                                            id={item+"menu"}
+                                            id={item + "menu"}
                                             anchorEl={anchorEl}
                                             open={open}
                                             onClose={closeAppbarNavItem}
+                                            disableScrollLock={true}
                                             MenuListProps={{
-                                                'aria-labelledby': (item+"button"),
+                                                'aria-labelledby': (item + "button"),
                                             }}
                                             sx={{ display: { xs: 'none', md: 'flex' } }}
-                                            // style={{width:'940px'}}
+                                            className={classes.appBarMenu}
+                                        // style={{ backgroundColor: 'black' }}
                                         >
                                             <MenuItem onClick={closeAppbarNavItem}>Game</MenuItem>
                                             <MenuItem onClick={closeAppbarNavItem}>My account</MenuItem>
                                             <MenuItem onClick={closeAppbarNavItem}>Logout</MenuItem>
-                                        </Menu> 
+                                        </Menu>
+
                                     </div>
                                 ))}
+                                <Button className={classes.navItemBtnIcon}
+                                >
+                                    <Typography className={classes.navItem} >
+                                        <PersonIcon />
+                                    </Typography>
+                                </Button>
                             </Box>
                         </div>
                     </Toolbar>

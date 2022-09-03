@@ -1,11 +1,11 @@
 import React from 'react'
+import BannerOne from './Home/BannerOne'
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-      <div style={{ height: '2000px', width: '50%', backgroundColor: 'yellow' }} ></div>
-    </div>
+    <>
+    <BannerOne/>
+    </>
 
   )
 }
