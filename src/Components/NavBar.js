@@ -216,7 +216,7 @@ const NavBar = (props) => {
                                             MenuListProps={{
                                                 'aria-labelledby': (item+"button"),
                                             }}
-                                            // sx={{ display: { xs: 'none', md: 'flex' } }}
+                                            sx={{ display: { xs: 'none', md: 'flex' } }}
                                             // style={{width:'940px'}}
                                         >
                                             <MenuItem onClick={closeAppbarNavItem}>Game</MenuItem>
