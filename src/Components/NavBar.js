@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
 import './NavBar.css';
-import { AppBar, Container, Toolbar, IconButton, Box, Button, List, Divider, Typography, ListItem, ListItemButton, ListItemIcon, ListItemText, SwipeableDrawer } from "@mui/material"
+import {
+    AppBar,
+    Container,
+    Toolbar,
+    IconButton,
+    Box,
+    Button,
+    List,
+    Divider,
+    Typography,
+    ListItem,
+    ListItemButton,
+    ListItemIcon,
+    ListItemText,
+    SwipeableDrawer
+} from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../Assets/logo.svg";
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import PersonIcon from '@mui/icons-material/Person';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
 
 const useStyles = makeStyles((theme) => ({
     logo: {
@@ -16,24 +36,21 @@ const useStyles = makeStyles((theme) => ({
     navItem: {
         width: 'auto',
         color: 'white',
-        // padding: '0px 15px',
         textTransform: 'upperCase',
         fontFamily: '',
         fontSize: '18px !important',
         lineHeight: '15px',
-        fontWeight: '550px',
+        fontWeight: '550px !important',
         textAlign: 'center',
         [theme.breakpoints.down("lg")]: {
             fontSize: '14px !important',
+            lineHeight: '18px',
+            fontWeight: '550px !important'
         },
-        // '&:hover': {
-        //     color: "#6DC2D3"
-        // }
     },
     listItem: {
         width: 'auto',
         color: 'white',
-        // padding: '0px 15px',
         textTransform: 'upperCase',
         fontFamily: '',
         fontSize: '14px !important',
@@ -47,7 +64,8 @@ const useStyles = makeStyles((theme) => ({
     navItemBtn: {
         maxWidth: '940px',
         height: '100%',
-        padding: '0px 14px',
+        // padding: '0px 14px',
+        padding: '10px 25px 10px 15px',
         backgroundColor: 'black',
         '&:hover': {
             borderBottom: "2px solid #6DC2D3",
@@ -77,15 +95,30 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const navItems = ['About1047', 'Game Info', 'Season', 'Community', 'News', 'Explore', 'Play Now'];
+const navItems = [
+    { nav: 'About1047', showIcon: false },
+    { nav: 'Game Info', showIcon: true },
+    { nav: 'Season', showIcon: false },
+    { nav: 'Community', showIcon: true },
+    { nav: 'News', showIcon: false },
+    { nav: 'Explore', showIcon: true },
+    { nav: 'Play Now', showIcon: true }
+];
 
 
 const NavBar = (props) => {
     const classes = useStyles();
     const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+
+    const [indDrawerNavItem, setindDrawerNavItem] = useState(-1);
+    const [indAppbarNavItem, setindAppbarNavItem] = useState(-1);
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
 
     const handleDrawerToggle = () => {
+        // setAnchorEl(null)
         setMobileOpen(!mobileOpen);
     };
 
@@ -96,23 +129,48 @@ const NavBar = (props) => {
         <Box
             sx={{ width: 'auto', backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75))', }}
             role="presentation"
-            onClick={handleDrawerToggle}
+            // onClick={handleDrawerToggle}
             onKeyDown={handleDrawerToggle}
         >
             <List>
-                {navItems.map((text, index) => (
-                    <ListItem key={text} disablePadding>
+                {navItems.map((item, index) => (
+                    <ListItem key={item.nav} disablePadding>
                         <ListItemButton className={classes.navItemBtn}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText className={classes.listItem} primary={text} />
+                            <ListItemText className={classes.listItem} primary={item.nav} />
+                            {item?.showIcon &&
+                                <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
+                            }
                         </ListItemButton>
                     </ListItem>
                 ))}
+                <ListItem disablePadding >
+                    <ListItemButton className={classes.navItemBtn} >
+                        <ListItemText className={classes.listItem} >
+                            <PersonIcon />
+                        </ListItemText>
+                    </ListItemButton>
+                </ListItem>
             </List>
         </Box>
     )
+
+    const openDrawerNavItem = (i) => {
+
+    }
+
+
+    const openAppbarNavItem = (event,haveMenu) => {
+        if(haveMenu)
+        {
+            setAnchorEl(event.currentTarget);
+        }
+        else{
+            setAnchorEl(null)
+        }
+    }
+    const closeAppbarNavItem = () => {
+        setAnchorEl(null);
+    }
 
 
     return (
@@ -134,12 +192,38 @@ const NavBar = (props) => {
                                 <MenuIcon />
                             </IconButton>
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                {navItems.map((item) => (
-                                    <button className={classes.navItemBtn} >
-                                        <Typography key={item} className={classes.navItem} >
-                                            {item}
-                                        </Typography>
-                                    </button>
+                                {navItems.map((item, ind) => (
+                                    <div>
+                                        <Button className={classes.navItemBtn}
+                                            id={item+"button"}
+                                            aria-controls={open ? (item+"menu") : undefined}
+                                            aria-haspopup="true"
+                                            aria-expanded={open ? 'true' : undefined}
+                                            onClick={(e) => openAppbarNavItem(e,item.showIcon)}
+                                        >
+                                            <Typography key={item} className={classes.navItem} >
+                                                {item.nav}
+                                            </Typography>
+                                            {item?.showIcon &&
+                                                <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
+                                            }
+                                        </Button>
+                                        <Menu
+                                            id={item+"menu"}
+                                            anchorEl={anchorEl}
+                                            open={open}
+                                            onClose={closeAppbarNavItem}
+                                            MenuListProps={{
+                                                'aria-labelledby': (item+"button"),
+                                            }}
+                                            // sx={{ display: { xs: 'none', md: 'flex' } }}
+                                            // style={{width:'940px'}}
+                                        >
+                                            <MenuItem onClick={closeAppbarNavItem}>Game</MenuItem>
+                                            <MenuItem onClick={closeAppbarNavItem}>My account</MenuItem>
+                                            <MenuItem onClick={closeAppbarNavItem}>Logout</MenuItem>
+                                        </Menu> 
+                                    </div>
                                 ))}
                             </Box>
                         </div>
