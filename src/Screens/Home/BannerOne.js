@@ -16,6 +16,7 @@ import bg1 from "../../Assets/Images/homeBanner1.png"
 import darkBg from "../../Assets/Images/homeDarkbg.png"
 import llogo from "../../Assets/Images/banner1logo.png"
 import MainHeading from '../../Components/MainHeading'
+import TransparentBtn from '../../Components/TransparentBtn'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -77,22 +78,22 @@ const useStyles = makeStyles((theme) => ({
     },
     smallerTitle: {
         // '& .MuiTypography-root': {
-            fontSize: '1.3rem',
+        fontSize: '1.3rem',
+        lineHeight: '30px',
+        fontFamily: ["Motserrat", "sans-serif"],
+        color: 'white',
+        fontWeight: '500 !important',
+        textAlign: 'left',
+        [theme.breakpoints.down("md")]: {
+            fontSize: '1.2rem',
             lineHeight: '30px',
-            fontFamily: ["Motserrat", "sans-serif"],
-            color: 'white',
-            fontWeight: '500 !important',
-            textAlign: 'left',
-            [theme.breakpoints.down("md")]: {
-                fontSize: '1.2rem',
-                lineHeight: '30px',
-                textAlign: 'center',
-            },
-            [theme.breakpoints.down("sm")]: {
-                fontSize: '1.1rem',
-                lineHeight: '30px',
-                textAlign: 'center',
-            }
+            textAlign: 'center',
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: '1.1rem',
+            lineHeight: '30px',
+            textAlign: 'center',
+        }
         // }
     }
 }));
@@ -130,7 +131,7 @@ const BannerOne = () => {
                 <div>
                     <MainHeading text='Play Free Now!' styling={{ color: 'white' }} />
                     <Typography className={classes.smallerTitle} > PORTAL ACROSS PLAYSTATION, XBOX AND PC</Typography>
-                    <Button>Play Now</Button>
+                    <TransparentBtn text='Play Now' />
                 </div>
             </Grid>
         </Grid>

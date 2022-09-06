@@ -9,15 +9,15 @@ const theme = createTheme({
 
   //   }
   // },
-  overrides: {
-    MuiButton: {
-      root: {
-        height: 40,
-      },
-    },
+  // overrides: {
+  //   MuiButton: {
+  //     root: {
+  //       height: 40,
+  //     },
+  //   },
     
 
-  },
+  // },
   breakpoints: {
     values: {
       xs: 0,
