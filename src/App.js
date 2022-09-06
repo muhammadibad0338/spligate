@@ -3,15 +3,19 @@ import { createTheme, ThemeProvider } from "@mui/material/styles"
 import Layout from './Layout/Layout';
 
 const theme = createTheme({
-  typography: {
-    fontFamily: ["Motserrat", "sans-serif"].join(",")
-  },
+  // typography: {
+  //   body1:{
+  //     fontFamily: ["Motserrat", "sans-serif"].join(","),
+
+  //   }
+  // },
   overrides: {
     MuiButton: {
       root: {
         height: 40,
       },
     },
+    
 
   },
   breakpoints: {
