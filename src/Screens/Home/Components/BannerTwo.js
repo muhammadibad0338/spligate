@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import {
-    Box,
     Typography,
     Grid,
 } from "@mui/material"
@@ -35,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     smallerTitle: {
-        // '& .MuiTypography-root': {
         fontSize: '1.3rem !important',
         lineHeight: '30px',
         fontFamily: ["Motserrat", "sans-serif"],
@@ -63,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: '0px !important',
             maxWidth:'90% !important',
         }
-        // }
     },
 }));
 
