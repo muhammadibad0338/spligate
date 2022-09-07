@@ -23,11 +23,15 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: 'cover, cover',
         },
         [theme.breakpoints.down("md")]: {
-            backgroundImage: `-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),url(${bg}),url(${lightBg})`,
+            backgroundImage: `-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),url(${lightBg}),url(${bg})`,
             backgroundSize: 'cover, cover',
             backgroundPosition: '50% 50%,50% 50%',
             backgroundRepeat: 'no-repeat,no-repeat',
-            backgroundAttachment: 'fixed, scroll',
+            backgroundAttachment: 'scroll, fixed, scroll',
+        },
+        [theme.breakpoints.down("sm")]: {
+            height: 'auto',
+            minHeight:'500px'
         },
     },
     banner1MainCntnr: {
@@ -83,22 +87,27 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: ["Motserrat", "sans-serif"],
         color: 'white',
         fontWeight: '500 !important',
-        textAlign: 'left',
+        textAlign: 'center',
+        textShadow:'0 3px 6px rgba(0 0 0 / 500) !important',
+        opacity: 1,
         marginBottom: '5px !important',
         marginLeft: '35px !important',
+        maxWidth:'60% !important',
         [theme.breakpoints.down("md")]: {
             fontSize: '1.2rem !important',
             lineHeight: '30px',
             textAlign: 'center',
             marginBottom: '5px !important',
-            marginLeft: '0px !important'
+            marginLeft: '0px !important',
+            maxWidth:'75% !important',
         },
         [theme.breakpoints.down("sm")]: {
             fontSize: '1.1rem !important',
             lineHeight: '30px',
             textAlign: 'center',
             marginBottom: '10px !important',
-            marginLeft: '0px !important'
+            marginLeft: '0px !important',
+            maxWidth:'90% !important',
         }
         // }
     },
@@ -110,9 +119,15 @@ const BannerTwo = () => {
     return (
         <Grid container className={classes.banner1} >
             <Grid item xs={12}
-                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                sx={{ display: 'flex',flexDirection: 'column' ,justifyContent: 'center', alignItems: 'center' }}
             >
-            <MainHeading text='PVP PORTAL SHOOTER' sx={{color:'white'}}  />
+                <MainHeading text='PVP PORTAL SHOOTER' sx={{ color: 'white' }} />
+                <Typography className={classes.smallerTitle} >
+                    Rewire your brain to frag with portals.
+                    Use portals to outsmart and outplay your opponents.
+                    Flank them from behind.
+                    Use momentum to fly through the air to new locations.
+                    Or quickly flee from a dangerous position.</Typography>
             </Grid>
         </Grid>
     )

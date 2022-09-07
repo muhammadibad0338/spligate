@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: '800 !important',
         textTransform: 'upperCase',
         [theme.breakpoints.down("md")]: {
-            fontSize: '2rem !important',
+            fontSize: '2.6rem !important',
             lineHeight: '55px !important',
             fontWeight: '800 !important',
             textAlign: 'center',
