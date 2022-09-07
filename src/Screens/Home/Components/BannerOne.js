@@ -1,25 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import {
-    AppBar,
-    Container,
-    Toolbar,
-    IconButton,
     Box,
-    Button,
-    List,
-    Divider,
     Typography,
     Grid,
-    OutlinedInput
 } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import bg1 from "../../Assets/Images/homeBanner1.png"
-import darkBg from "../../Assets/Images/homeDarkbg.png"
-import llogo from "../../Assets/Images/banner1logo.png"
-import MainHeading from '../../Components/MainHeading'
-import TransparentBtn from '../../Components/TransparentBtn'
-import TransparentInput from '../../Components/TransparentInput'
+import bg1 from "../../../Assets/Images/homeBanner1.png"
+import darkBg from "../../../Assets/Images/homeDarkbg.png"
+import llogo from "../../../Assets/Images/banner1logo.png"
+import MainHeading from '../../../Components/MainHeading'
+import TransparentBtn from '../../../Components/TransparentBtn'
+import TransparentInput from '../../../Components/TransparentInput'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -142,7 +134,7 @@ const BannerOne = () => {
             //     }} 
             >
                 <div>
-                    <img src={llogo} className={classes.llogo} />
+                    <img src={llogo} alt="logo" className={classes.llogo} />
                 </div>
                 <Box sx={(theme) => ({
                     width: '100%',
@@ -171,7 +163,7 @@ const BannerOne = () => {
                             }
                         })}
                         text='Play Now' />
-                    <Typography className={classes.smallerTitle} > STAY UP-TO-DATE ON SPLITGATE</Typography>
+                    <Typography className={classes.smallerTitle} sx={{display:{sm:'flex',xs:'none'}}} > STAY UP-TO-DATE ON SPLITGATE</Typography>
                     <Box sx={(theme) => ({
                         minWidth: '570px',
                         display: 'flex',
@@ -189,11 +181,12 @@ const BannerOne = () => {
                             marginLeft: '0px',
                         }
                     })} >
-                        <Box style={{display:'flex'}} >
+                        <Box sx={{display:{sm:'flex',xs:'none'}}} >
                             <TransparentInput placeHolder='EMAIL' />
                             <TransparentBtn text='SUBMIT'/>
                         </Box>
                         <TransparentBtn
+                        sx={{marginTop:{md:'0px',xs:'10px'}}}
                             Icon={() => <PlayArrowIcon />}
                         />
                     </Box>
