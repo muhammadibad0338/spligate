@@ -9,14 +9,17 @@ import {
     List,
     Divider,
     Typography,
-    Grid
+    Grid,
+    OutlinedInput
 } from "@mui/material"
 import { makeStyles } from "@mui/styles"
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import bg1 from "../../Assets/Images/homeBanner1.png"
 import darkBg from "../../Assets/Images/homeDarkbg.png"
 import llogo from "../../Assets/Images/banner1logo.png"
 import MainHeading from '../../Components/MainHeading'
 import TransparentBtn from '../../Components/TransparentBtn'
+import TransparentInput from '../../Components/TransparentInput'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -50,13 +53,13 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down("md")]: {
             minHeight: '800px',
-            justifyContent: "center",
+            // justifyContent: "center",
             alignItems: 'center'
         }
     },
     llogo: {
         display: 'inline-block',
-        height: 'auto',
+        flex: '0 auto',
         maxHeight: 'none',
         minHeight: '0px',
         maxWidth: '400px',
@@ -78,21 +81,27 @@ const useStyles = makeStyles((theme) => ({
     },
     smallerTitle: {
         // '& .MuiTypography-root': {
-        fontSize: '1.3rem',
+        fontSize: '1.3rem !important',
         lineHeight: '30px',
         fontFamily: ["Motserrat", "sans-serif"],
         color: 'white',
         fontWeight: '500 !important',
         textAlign: 'left',
+        marginBottom: '5px !important',
+        marginLeft: '35px !important',
         [theme.breakpoints.down("md")]: {
-            fontSize: '1.2rem',
+            fontSize: '1.2rem !important',
             lineHeight: '30px',
             textAlign: 'center',
+            marginBottom: '5px !important',
+            marginLeft: '0px !important'
         },
         [theme.breakpoints.down("sm")]: {
-            fontSize: '1.1rem',
+            fontSize: '1.1rem !important',
             lineHeight: '30px',
             textAlign: 'center',
+            marginBottom: '10px !important',
+            marginLeft: '0px !important'
         }
         // }
     }
@@ -128,11 +137,57 @@ const BannerOne = () => {
                 <div>
                     <img src={llogo} className={classes.llogo} />
                 </div>
-                <div>
-                    <MainHeading text='Play Free Now!' styling={{ color: 'white' }} />
+                <Box sx={(theme) => ({
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'flex-start',
+                    [theme.breakpoints.down("md")]: {
+                        alignItems: 'center'
+                    },
+
+                })} >
+                    <MainHeading text='Play Free Now!' sx={{ color: 'white', marginLeft: { md: '35px', sm: '0px' } }} />
                     <Typography className={classes.smallerTitle} > PORTAL ACROSS PLAYSTATION, XBOX AND PC</Typography>
-                    <TransparentBtn text='Play Now' />
-                </div>
+                    <TransparentBtn
+                        sx={(theme) => ({
+                            marginBottom: '80px',
+                            marginLeft: '35px',
+                            [theme.breakpoints.down("md")]: {
+                                marginBottom: '60px',
+                                marginLeft: '0px',
+                            },
+                            [theme.breakpoints.down("sm")]: {
+                                marginBottom: '20px',
+                                padding: '7px 15px',
+                                marginLeft: '0px',
+                            }
+                        })}
+                        text='Play Now' />
+                    <Typography className={classes.smallerTitle} > STAY UP-TO-DATE ON SPLITGATE</Typography>
+                    <Box sx={(theme) => ({
+                        minWidth: '570px',
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        [theme.breakpoints.down("md")]: {
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center'
+                        },
+                        [theme.breakpoints.down('sm')]:{
+                            minWidth:'auto'
+                        }
+                    })} >
+                        <Box style={{display:'flex'}} >
+                            <TransparentInput placeHolder='EMAIL' />
+                            <TransparentBtn text='SUBMIT'/>
+                        </Box>
+                        <TransparentBtn
+                            Icon={() => <PlayArrowIcon />}
+                        />
+                    </Box>
+                </Box>
             </Grid>
         </Grid>
     )

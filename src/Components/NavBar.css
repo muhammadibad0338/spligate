@@ -12,3 +12,23 @@
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
     margin-top: 0 !important;
 }
+
+/* input{
+    height: 40px;
+    max-width: 400px;
+    background-color: transparent;
+    color: white;
+    font-size: 1.1rem;
+    line-height: 20px;
+    padding: 19px 150px 19px 20px;
+    border: 2px solid white;
+}
+input:focus{
+    border: 2px solid blue !important;
+}
+
+input:focus-visible {
+    outline: none !important;
+    border: 2px solid blue !important;
+}
+ */

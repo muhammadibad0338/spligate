@@ -5,6 +5,7 @@ import {
 // import { makeStyles } from "@mui/styles/"
 import { alpha, styled } from '@mui/system';
 import btnBg from "../Assets/Images/btnBg.png"
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 // const useStyles = styled((theme) => ({
 //     btn: {
@@ -48,20 +49,21 @@ const Btn = styled(Button)(({ theme }) => ({
     color: 'white',
     fontFamily: ["Motserrat", "sans-serif"].join(","),
     fontWeight:'500',
-    marginBottom:'80px',
-    [theme.breakpoints.down("md")]: {
-        marginBottom:'60px'
-    },
-    [theme.breakpoints.down("sm")]: {
-        marginBottom:'20px',
-        padding:'7px 15px'
-    }
+    width:'fit-content'
+    // marginBottom:'80px',
+    // [theme.breakpoints.down("md")]: {
+    //     marginBottom:'60px'
+    // },
+    // [theme.breakpoints.down("sm")]: {
+    //     // marginBottom:'20px',
+    //     padding:'7px 15px'
+    // }
 }))
 
 
-const TransparentBtn = ({text}) => {
+const TransparentBtn = ({text,sx,Icon}) => {
     return (
-        <Btn variant='outlined' >{text} </Btn>
+        <Btn variant='outlined' sx={sx} > {text ? text : <Icon/> }</Btn>
     )
 }
 

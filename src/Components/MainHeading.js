@@ -10,25 +10,29 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '3rem !important',
         lineHeight: '60px !important',
         fontWeight: '800 !important',
-        textTransform:'upperCase',
+        textTransform: 'upperCase',
         [theme.breakpoints.down("md")]: {
             fontSize: '2rem !important',
             lineHeight: '55px !important',
-            fontWeight: '800 !important' 
+            fontWeight: '800 !important',
+            textAlign: 'center',
+            marginBottom: '10px !important'
         },
         [theme.breakpoints.down("sm")]: {
-            fontSize: '1rem !important',
+            fontSize: '2rem !important',
             lineHeight: '40px !important',
-            fontWeight: '800 !important' 
+            fontWeight: '800 !important',
+            textAlign: 'center',
+            marginBottom: '10px !important'
         }
     }
 }));
 
-const MainHeading = ({ text,styling }) => {
+const MainHeading = ({ text, sx }) => {
     const classes = useStyles();
 
     return (
-        <Typography style={{...styling}} className={classes.mainHead} >{text}</Typography>
+        <Typography sx={sx} className={classes.mainHead} >{text}</Typography>
     )
 }
 
