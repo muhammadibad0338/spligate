@@ -26,52 +26,6 @@ const useStyles = makeStyles((theme) => ({
             backgroundRepeat: 'repeat,no-repeat,repeat-y'
         },
     },
-    banner1MainCntnr: {
-        display: 'flex',
-        flexDirection: 'column !important',
-        alignItems: 'flex-start',
-        height: '100vh',
-        maxHeight: '2160px',
-        minHeight: '700px',
-        paddingTop: '10rem',
-        [theme.breakpoints.down("fl")]: {
-            height: '100vh',
-            minHeight: '900px',
-            paddingTop: '80px',
-        },
-        [theme.breakpoints.down("md")]: {
-            minHeight: '800px',
-            // justifyContent: "center",
-            alignItems: 'center',
-            paddingTop: '60px'
-        },
-        [theme.breakpoints.down("sm")]: {
-            paddingTop: '10rem'
-        }
-    },
-    llogo: {
-        display: 'inline-block',
-        flex: '0 auto',
-        maxHeight: 'none',
-        minHeight: '0px',
-        maxWidth: '400px',
-        paddingLeft: '35px',
-        marginBottom: '40px',
-        [theme.breakpoints.down("md")]: {
-            display: 'block',
-            width: '90%',
-            height: 'auto',
-            maxWidth: '350px',
-            marginBottom: '40px',
-        },
-        [theme.breakpoints.down("sm")]: {
-            display: 'block',
-            width: '80%',
-            height: 'auto',
-            maxWidth: '300px',
-            marginBottom: '40px',
-        }
-    },
     soliderImg: {
         marginTop: '-150px',
         marginBottom: '40px',
