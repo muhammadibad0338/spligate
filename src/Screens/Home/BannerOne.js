@@ -47,14 +47,20 @@ const useStyles = makeStyles((theme) => ({
         height: '100vh',
         maxHeight: '2160px',
         minHeight: '700px',
+        paddingTop:'10rem',
         [theme.breakpoints.down("fl")]: {
             height: '100vh',
             minHeight: '900px',
+            paddingTop:'80px',
         },
         [theme.breakpoints.down("md")]: {
             minHeight: '800px',
             // justifyContent: "center",
-            alignItems: 'center'
+            alignItems: 'center',
+            paddingTop:'60px'
+        },
+        [theme.breakpoints.down("sm")]: {
+            paddingTop:'10rem'
         }
     },
     llogo: {
@@ -64,6 +70,7 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '0px',
         maxWidth: '400px',
         paddingLeft: '35px',
+        marginBottom:'40px',
         [theme.breakpoints.down("md")]: {
             display: 'block',
             width: '90%',
@@ -131,7 +138,7 @@ const BannerOne = () => {
             // style={{
             //         willChange:'transform',
             //         transform:`translate3d(0%,${scrollPosition}px,0px) scale3d(1,1,1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg,0deg)`,
-            //         transformStyle:'preserve-3d'
+            //         transformStyle:'preserve-3d',
             //     }} 
             >
                 <div>
@@ -170,13 +177,16 @@ const BannerOne = () => {
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'space-between',
+                        marginLeft: '35px',
                         [theme.breakpoints.down("md")]: {
+                            marginLeft: '0px',
                             display: 'flex',
                             flexDirection: 'column',
-                            alignItems: 'center'
+                            alignItems: 'center',
                         },
                         [theme.breakpoints.down('sm')]:{
-                            minWidth:'auto'
+                            minWidth:'auto',
+                            marginLeft: '0px',
                         }
                     })} >
                         <Box style={{display:'flex'}} >
