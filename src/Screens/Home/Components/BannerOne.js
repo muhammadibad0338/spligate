@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme) => ({
             marginLeft: '0px !important'
         }
         // }
-    }
+    },
 }));
 
 const BannerOne = () => {

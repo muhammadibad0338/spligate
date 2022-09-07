@@ -1,6 +1,6 @@
 import React from 'react'
 import {Routes,Route, } from "react-router-dom"
-import Home from '../Screens/Home'
+import Home from '../Screens/Home/Home'
 import { withRouter } from './WithRouter'
 
 
