@@ -12,7 +12,6 @@ import TransparentBtn from '../../../Components/TransparentBtn';
 //anmation library
 import Slide from 'react-reveal/Slide'
 
-
 const useStyles = makeStyles((theme) => ({
     banner1: {
         height: 'auto',
