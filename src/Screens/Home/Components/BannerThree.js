@@ -6,7 +6,8 @@ import {
 import { makeStyles } from "@mui/styles";
 import darkBg from "../../../Assets/Images/homeDarkbg.png"
 import soilder from "../../../Assets/Images/soilder.png"
-
+//animation library
+import Fade from 'react-reveal/Fade';
 
 const useStyles = makeStyles((theme) => ({
     banner1: {
@@ -56,7 +57,9 @@ const BannerThree = () => {
             <Grid item xs={12}
                 sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}
             >
-                <img alt="Spligate Soilder" src={soilder} className={classes.soliderImg} />
+                <Fade>
+                    <img alt="Spligate Soilder" src={soilder} className={classes.soliderImg} />
+                </Fade>
             </Grid>
         </Grid>
     )

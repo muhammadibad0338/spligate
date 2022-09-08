@@ -9,6 +9,9 @@ import data from "../../../State/home.json"
 import { padding, styled } from '@mui/system';
 import darkBg from "../../../Assets/Images/homeDarkbg.png"
 import TransparentBtn from '../../../Components/TransparentBtn';
+//anmation library
+import Slide from 'react-reveal/Slide'
+
 
 const useStyles = makeStyles((theme) => ({
     banner1: {
@@ -68,18 +71,20 @@ const BannerFour = () => {
                             padding: { fl: '0px 10px', xs: '0px' },
                             marginBottom: { xs: '20px', fl: '0px' }
                         }} >
-                            <ImageView
-                                sx={{
-                                    backgroundImage: `url(${val.image})`,
-                                    backgroundSize: 'cover',
-                                    backgroundRepeat: 'no-repeat',
-                                    backgroundPosition: { xs: '50% 50%', md: 'none' }
-                                }}
-                            />
-                            <Typography className={classes.smallerTitle} > {val.titleText}</Typography>
-                            <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }} >
-                                <TransparentBtn sx={{ margin: 'auto' }} text={val.btnText} />
-                            </Box>
+                            <Slide bottom >
+                                <ImageView
+                                    sx={{
+                                        backgroundImage: `url(${val.image})`,
+                                        backgroundSize: 'cover',
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: { xs: '50% 50%', md: 'none' }
+                                    }}
+                                />
+                                <Typography className={classes.smallerTitle} > {val.titleText}</Typography>
+                                <Box sx={{ width: '100%', display: 'flex', alignItems: 'center' }} >
+                                    <TransparentBtn sx={{ margin: 'auto' }} text={val.btnText} />
+                                </Box>
+                            </Slide>
                         </Grid>
                     )
                 })

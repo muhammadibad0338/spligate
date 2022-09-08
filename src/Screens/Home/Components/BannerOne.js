@@ -12,6 +12,8 @@ import llogo from "../../../Assets/Images/banner1logo.png"
 import MainHeading from '../../../Components/MainHeading'
 import TransparentBtn from '../../../Components/TransparentBtn'
 import TransparentInput from '../../../Components/TransparentInput'
+//animation library
+import Fade from 'react-reveal/Fade';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -39,23 +41,23 @@ const useStyles = makeStyles((theme) => ({
         height: '100vh',
         maxHeight: '2160px',
         minHeight: '700px',
-        paddingTop:'10rem',
+        paddingTop: '10rem',
         [theme.breakpoints.down("fl")]: {
             height: '100vh',
             minHeight: '900px',
-            paddingTop:'80px',
+            paddingTop: '80px',
         },
         [theme.breakpoints.down("md")]: {
             minHeight: '800px',
             // justifyContent: "center",
             alignItems: 'center',
-            paddingTop:'60px'
+            paddingTop: '60px'
         },
         [theme.breakpoints.down("sm")]: {
-            paddingTop:'10rem'
+            paddingTop: '10rem'
         },
         [theme.breakpoints.down("m")]: {
-            paddingTop:'50%'
+            paddingTop: '50%'
         }
     },
     llogo: {
@@ -65,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
         minHeight: '0px',
         maxWidth: '400px',
         paddingLeft: '35px',
-        marginBottom:'40px',
+        marginBottom: '40px',
         [theme.breakpoints.down("md")]: {
             display: 'block',
             width: '90%',
@@ -149,24 +151,26 @@ const BannerOne = () => {
                     },
 
                 })} >
-                    <MainHeading text='Play Free Now!' sx={{ color: 'white', marginLeft: { md: '35px', sm: '0px' } }} />
-                    <Typography className={classes.smallerTitle} > PORTAL ACROSS PLAYSTATION, XBOX AND PC</Typography>
-                    <TransparentBtn
-                        sx={(theme) => ({
-                            marginBottom: '80px',
-                            marginLeft: '35px',
-                            [theme.breakpoints.down("md")]: {
-                                marginBottom: '60px',
-                                marginLeft: '0px',
-                            },
-                            [theme.breakpoints.down("sm")]: {
-                                marginBottom: '20px',
-                                padding: '7px 15px',
-                                marginLeft: '0px',
-                            }
-                        })}
-                        text='Play Now' />
-                    <Typography className={classes.smallerTitle} sx={{display:{sm:'flex',xs:'none'}}} > STAY UP-TO-DATE ON SPLITGATE</Typography>
+                    <Fade>
+                        <MainHeading text='Play Free Now!' sx={{ color: 'white', marginLeft: { md: '35px', sm: '0px' } }} />
+                        <Typography className={classes.smallerTitle} > PORTAL ACROSS PLAYSTATION, XBOX AND PC</Typography>
+                        <TransparentBtn
+                            sx={(theme) => ({
+                                marginBottom: '80px',
+                                marginLeft: '35px',
+                                [theme.breakpoints.down("md")]: {
+                                    marginBottom: '60px',
+                                    marginLeft: '0px',
+                                },
+                                [theme.breakpoints.down("sm")]: {
+                                    marginBottom: '20px',
+                                    padding: '7px 15px',
+                                    marginLeft: '0px',
+                                }
+                            })}
+                            text='Play Now' />
+                    </Fade>
+                    <Typography className={classes.smallerTitle} sx={{ display: { sm: 'flex', xs: 'none' } }} > STAY UP-TO-DATE ON SPLITGATE</Typography>
                     <Box sx={(theme) => ({
                         minWidth: '570px',
                         display: 'flex',
@@ -179,19 +183,21 @@ const BannerOne = () => {
                             flexDirection: 'column',
                             alignItems: 'center',
                         },
-                        [theme.breakpoints.down('sm')]:{
-                            minWidth:'auto',
+                        [theme.breakpoints.down('sm')]: {
+                            minWidth: 'auto',
                             marginLeft: '0px',
                         }
                     })} >
-                        <Box sx={{display:{sm:'flex',xs:'none'}}} >
-                            <TransparentInput placeHolder='EMAIL' />
-                            <TransparentBtn text='SUBMIT'/>
-                        </Box>
-                        <TransparentBtn
-                        sx={{marginTop:{md:'0px',xs:'10px',m:'20px'}}}
-                            Icon={() => <PlayArrowIcon />}
-                        />
+                        <Fade>
+                            <Box sx={{ display: { sm: 'flex', xs: 'none' } }} >
+                                <TransparentInput placeHolder='EMAIL' />
+                                <TransparentBtn text='SUBMIT' />
+                            </Box>
+                            <TransparentBtn
+                                sx={{ marginTop: { md: '0px', xs: '10px', m: '20px' } }}
+                                Icon={() => <PlayArrowIcon />}
+                            />
+                        </Fade>
                     </Box>
                 </Box>
             </Grid>
