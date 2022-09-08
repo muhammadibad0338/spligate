@@ -37,9 +37,14 @@ const useStyles = makeStyles((theme) => ({
             marginBottom: '60px',
         },
         [theme.breakpoints.down("sm")]: {
-            width: '80%',
+            width: '70%',
             marginTop: '-100px',
             marginBottom: '40px',
+        },
+        [theme.breakpoints.down("m")]: {
+            width: '80%',
+            marginTop: '-60px',
+            // marginBottom: '40px',
         },
     }
 }));

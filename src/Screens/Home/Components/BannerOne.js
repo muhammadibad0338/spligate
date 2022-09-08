@@ -53,6 +53,9 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down("sm")]: {
             paddingTop:'10rem'
+        },
+        [theme.breakpoints.down("m")]: {
+            paddingTop:'50%'
         }
     },
     llogo: {
@@ -186,7 +189,7 @@ const BannerOne = () => {
                             <TransparentBtn text='SUBMIT'/>
                         </Box>
                         <TransparentBtn
-                        sx={{marginTop:{md:'0px',xs:'10px'}}}
+                        sx={{marginTop:{md:'0px',xs:'10px',m:'20px'}}}
                             Icon={() => <PlayArrowIcon />}
                         />
                     </Box>

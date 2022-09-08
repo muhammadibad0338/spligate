@@ -1,0 +1,20 @@
+
+{
+    "sectionFourData" :[
+        {
+            "image" : "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2dd9950c0230decb2287c_HighresScreenshot00016.jpg",
+            "titleText" : "ENDLESS WAYS TO FRAG",
+            "btnText" : "weaponry"
+        },
+        {
+            "image" : "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2dced3cbe19b3f0c4ecc7_HighresScreenshot00031.jpg",
+            "titleText" : "PORTAL COMBAT",
+            "btnText" : "GamePlay"
+        },
+        {
+            "image" : "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f20a05593bf0bfdefeb8f5_Foregone%20Destruction1000.jpg",
+            "titleText" : "EXOTIC LOCATIONS",
+            "btnText" : "Exotic Location"
+        }
+    ]
+}
