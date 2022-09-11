@@ -20,7 +20,6 @@ const Home = () => {
       <BannerTwo />
       <BannerThree />
       <BannerFour/>
-      <div style={{height:'300px',width:'100%',backgroundColor:'yellow'}} ></div>
     </>
 
   )
