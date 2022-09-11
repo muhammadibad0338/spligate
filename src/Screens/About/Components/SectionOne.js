@@ -17,6 +17,7 @@ import studioLogo5 from "../../../Assets/Images/studioLogo5.png";
 import studioLogo6 from "../../../Assets/Images/studioLogo6.png";
 import studioLogo7 from "../../../Assets/Images/studioLogo7.png";
 import TransparentBtn from '../../../Components/TransparentBtn';
+import BreifeTitle from './BreifeTitle';
 
 
 
@@ -86,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         // padding: '0px 10px',
         height: 'fit-content',
-        marginBottom:'15px'
+        marginBottom: '15px'
     },
     widthCntrlr: {
         width: '60%',
@@ -96,10 +97,10 @@ const useStyles = makeStyles((theme) => ({
             width: '100%',
             minWidth: '0px',
         },
-        [theme.breakpoints.down("fl")]: {
+        [theme.breakpoints.down("m")]: {
             width: '100%',
             minWidth: '0px',
-            flexWrap:'wrap'
+            flexWrap: 'wrap'
         },
 
     },
@@ -109,12 +110,13 @@ const useStyles = makeStyles((theme) => ({
         opacity: '0.8',
         margin: '0px auto',
         [theme.breakpoints.down("md")]: {
-            maxWidth: '11%'
+            maxWidth: '11%',
+            opacity: '0.8',
+            margin: '0px auto',
         },
-        [theme.breakpoints.down("fl")]: {
+        [theme.breakpoints.down("m")]: {
             maxWidth: '22%',
-            height:'auto',
-            margin:'auto',
+            margin: 'auto',
         },
     }
 }));
@@ -145,6 +147,12 @@ const SectionOne = () => {
                     </div>
                 </div>
                 <TransparentBtn text='join us' />
+                {/* <BreifeTitle
+                    title={State.head2}
+                    titleSx={{
+                        color: 'white'
+                    }}
+                /> */}
             </Grid>
         </Grid>
     )
