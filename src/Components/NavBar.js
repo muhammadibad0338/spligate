@@ -25,6 +25,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useNavigate } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -124,18 +125,20 @@ const useStyles = makeStyles((theme) => ({
 
 
 const navItems = [
-    { nav: 'About1047', showIcon: false },
-    { nav: 'Game Info', showIcon: true },
-    { nav: 'Season', showIcon: false },
-    { nav: 'Community', showIcon: true },
-    { nav: 'News', showIcon: false },
-    { nav: 'Explore', showIcon: true },
+    { nav: 'About1047', showIcon: false, path: '/1047' },
+    { nav: 'Game Info', showIcon: true, },
+    { nav: 'Season', showIcon: false, path: '/' },
+    { nav: 'Community', showIcon: true, },
+    { nav: 'News', showIcon: false, path: '/' },
+    { nav: 'Explore', showIcon: true, },
     { nav: 'Play Now', showIcon: true }
 ];
 
 
 const NavBar = (props) => {
     const classes = useStyles();
+    let navigate = useNavigate();
+    
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -163,7 +166,12 @@ const NavBar = (props) => {
             <List>
                 {navItems.map((item, index) => (
                     <ListItem key={item.nav} disablePadding>
-                        <ListItemButton className={classes.navItemBtn}>
+                        <ListItemButton className={classes.navItemBtn} onClick={()=>{
+                            if(!item.showIcon)
+                            {
+                                navigate(`${item.path}`);
+                            }
+                        }} >
                             <ListItemText className={classes.listItem} primary={item.nav} />
                             {item?.showIcon &&
                                 <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
@@ -187,14 +195,19 @@ const NavBar = (props) => {
     }
 
 
-    const openAppbarNavItem = (event, haveMenu) => {
+    const openAppbarNavItem = (event, haveMenu,path) => {
         if (haveMenu) {
             setAnchorEl(event.currentTarget);
         }
         else {
             setAnchorEl(null)
+            // console.log(path,"haveMenu")
+            navigate(`${path}`);
         }
+        
     }
+
+
     const closeAppbarNavItem = () => {
         setAnchorEl(null);
     }
@@ -226,7 +239,7 @@ const NavBar = (props) => {
                                             // aria-controls={open ? (item + "menu") : undefined}
                                             // aria-haspopup="true"
                                             // aria-expanded={open ? 'true' : undefined}
-                                            onClick={(e) => openAppbarNavItem(e, item.showIcon)}
+                                            onClick={(e) => openAppbarNavItem(e, item.showIcon,item?.path)}
                                         >
                                             <Typography key={item} className={classes.navItem} >
                                                 {item.nav}

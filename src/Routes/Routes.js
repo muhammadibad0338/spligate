@@ -1,6 +1,7 @@
 import React from 'react'
 import {Routes,Route, } from "react-router-dom"
 import Home from '../Screens/Home/Home'
+import About from '../Screens/About/About'
 import { withRouter } from './WithRouter'
 
 
@@ -10,8 +11,8 @@ const routesArr = [
         Component: Home
     },
     {
-        path: "/test",
-        Component: Home
+        path: "/1047",
+        Component: About
     }
 ]
 
