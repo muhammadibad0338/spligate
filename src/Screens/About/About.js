@@ -14,7 +14,7 @@ const About = () => {
   return (
     <>
       <SectionOne/>
-      <div style={{height:'10vh',width:'100%',backgroundColor:'yellow'}} ></div>
+      {/* <div style={{height:'10vh',width:'100%',backgroundColor:'yellow'}} ></div> */}
     </>
   )
 }

@@ -16,6 +16,7 @@ import studioLogo4 from "../../../Assets/Images/studioLogo4.png";
 import studioLogo5 from "../../../Assets/Images/studioLogo5.png";
 import studioLogo6 from "../../../Assets/Images/studioLogo6.png";
 import studioLogo7 from "../../../Assets/Images/studioLogo7.png";
+import TransparentBtn from '../../../Components/TransparentBtn';
 
 
 
@@ -41,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
     },
     desc1: {
         width: '60vw',
-        height:'auto',
-        minWidth:'900px',
+        height: 'auto',
+        minWidth: '900px',
         fontSize: '1.5rem !important',
         lineHeight: '30px',
         fontFamily: ["Motserrat", "sans-serif"],
@@ -57,14 +58,14 @@ const useStyles = makeStyles((theme) => ({
             textAlign: 'center',
             marginBottom: '5px !important',
             width: '70vw',
-            minWidth:'580px',
+            minWidth: '580px',
         },
         [theme.breakpoints.down("sm")]: {
             fontSize: '1.3rem !important',
             lineHeight: '30px',
             textAlign: 'center',
             width: '90vw',
-            minWidth:'250px',
+            minWidth: '250px',
             marginBottom: '10px !important',
         }
     },
@@ -77,15 +78,53 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.down("sm")]: {
             height: '75px'
         }
+    },
+    logoWrapper: {
+        display: 'flex',
+        // flexWrap: 'wrap',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        // padding: '0px 10px',
+        height: 'fit-content',
+        marginBottom:'15px'
+    },
+    widthCntrlr: {
+        width: '60%',
+        minWidth: '800px',
+        display: 'flex',
+        [theme.breakpoints.down("md")]: {
+            width: '100%',
+            minWidth: '0px',
+        },
+        [theme.breakpoints.down("fl")]: {
+            width: '100%',
+            minWidth: '0px',
+            flexWrap:'wrap'
+        },
+
+    },
+    logoImg: {
+        maxWidth: '9%',
+        height: 'auto',
+        opacity: '0.8',
+        margin: '0px auto',
+        [theme.breakpoints.down("md")]: {
+            maxWidth: '11%'
+        },
+        [theme.breakpoints.down("fl")]: {
+            maxWidth: '22%',
+            height:'auto',
+            margin:'auto',
+        },
     }
 }));
 
 const SectionOne = () => {
     const classes = useStyles();
-    const logoArray = [studioLogo1,studioLogo2,studioLogo3,studioLogo4,studioLogo5,studioLogo6,studioLogo7]
+    const logoArray = [studioLogo1, studioLogo2, studioLogo3, studioLogo4, studioLogo5, studioLogo6, studioLogo7]
     return (
         <Grid container className={classes.banner1} >
-            <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column',alignItems:'center' }} >
+            <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: 'fit-content' }} >
                 <div className={classes.gap} ></div>
                 <MainHeading text={State.head1}
                     sx={{
@@ -96,8 +135,17 @@ const SectionOne = () => {
                     }}
                 />
                 <Typography className={classes.desc1} >{State.desc1}</Typography>
+                <div item xs={12} className={classes.logoWrapper} >
+                    <div className={classes.widthCntrlr} >
+                        {logoArray.map((image, i) => {
+                            return (
+                                <img src={image} className={classes.logoImg} />
+                            )
+                        })}
+                    </div>
+                </div>
+                <TransparentBtn text='join us' />
             </Grid>
-
         </Grid>
     )
 }
