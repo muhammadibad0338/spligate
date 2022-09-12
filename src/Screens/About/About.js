@@ -9,12 +9,13 @@ import { makeStyles } from "@mui/styles";
 import { styled } from '@mui/system';
 import darkBg from "../../Assets/Images/homeDarkbg.png"
 import SectionOne from './Components/SectionOne';
+import SectionTwo from './Components/SectionTwo';
 
 const About = () => {
   return (
     <>
       <SectionOne/>
-      {/* <div style={{height:'10vh',width:'100%',backgroundColor:'yellow'}} ></div> */}
+      <SectionTwo/>
     </>
   )
 }

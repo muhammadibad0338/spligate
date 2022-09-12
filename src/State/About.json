@@ -7,5 +7,27 @@
     "desc3": "1047 Games is and has always been a fully remote studio. This allows us to tap talent from anywhere in the world to further our mission. We take pride in giving our team the flexibility to work where they want and how they want to achieve amazing results. Our growing crew already spans a significant portion of the globe. ",
     "head4": "THE FUTURE IS BRIGHT",
     "desc4": "It all starts with our flagship game Splitgate, the viral arena shooter currently in Beta across PC and consoles. It has been on a meteoric rise during the second half of 2021, hitting 2M downloads within the first two weeks and over 15M downloads total. 1047 Games has a hit game, a growing team, and some of the best investors in the industry backing it. The sky's the limit!",
-    "head5": "CONTACT US"
+    "head5": "CONTACT US",
+    "contact":[
+        {
+            "email":"press@1047games.com",
+            "gridSize":4
+        },
+        {
+            "email": "‍support@1047games.com",
+            "gridSize": 4
+        },
+        {
+            "email": "‍partnerships@1047games.com",
+            "gridSize": 4
+        },
+        {
+            "email": "‍‍esports@1047games.com",
+            "gridSize": 6
+        },
+        {
+            "email": "legal@1047games.com",
+            "gridSize": 6
+        }
+    ]
 }

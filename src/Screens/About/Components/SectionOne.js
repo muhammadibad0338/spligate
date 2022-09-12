@@ -40,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
             backgroundRepeat: 'repeat,no-repeat,repeat-y',
             height: '100vh'
         },
+        [theme.breakpoints.down("sm")]: {
+            height: 'auto'
+        }
     },
     desc1: {
         width: '60vw',
@@ -146,13 +149,17 @@ const SectionOne = () => {
                         })}
                     </div>
                 </div>
-                <TransparentBtn text='join us' />
-                {/* <BreifeTitle
+                <TransparentBtn text='join us' sx={{ marginBottom: '40px' }} />
+                <BreifeTitle
                     title={State.head2}
                     titleSx={{
                         color: 'white'
                     }}
-                /> */}
+                    breif={State.desc2}
+                    breifSx={{
+                        color: 'white'
+                    }}
+                />
             </Grid>
         </Grid>
     )
