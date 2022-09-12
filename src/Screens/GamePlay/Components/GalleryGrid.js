@@ -64,7 +64,7 @@ const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
             display: 'flex',
             flexDirection: `${reverse ? 'row' : 'row-reverse' }`,
             [theme.breakpoints.down("md")]: {
-                flexDirection: 'column',
+                flexDirection: `${reverse ? 'column' : 'column-reverse' }`,
             }
         })}  >
             {/* left container */}
@@ -98,7 +98,9 @@ const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    marginLeft: '25px',
+                    // marginLeft: '25px',
+                    marginLeft: `${reverse ? '25px' : '0px' }`,
+                    
                     [theme.breakpoints.down("md")]: {
                         width: '100%',
                         marginLeft: '0px',
@@ -138,13 +140,16 @@ const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
                     justifyContent: 'center',
                     alignItems: 'center',
                     marginLeft: '25px',
+                    marginRight: `${!reverse ? '25px' : '0px' }`,
                     [theme.breakpoints.down("md")]: {
                         width: '100%',
                         marginLeft: '25px',
+                        marginRight:'0px'
                     },
                     [theme.breakpoints.down("m")]: {
                         width: '100%',
                         marginLeft: '10px',
+                        marginRight:'0px'
                     }
                 })} >
                     <SmallImageBox>

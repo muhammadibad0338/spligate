@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         },
         [theme.breakpoints.down("md")]: {
             backgroundImage: `-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),url(${darkBg})`,
-            backgroundSize: 'auto, auto,cover',
+            backgroundSize: 'auto, cover,cover',
             backgroundPosition: '0px 0px, 82% 0%,50% 0%',
             backgroundRepeat: 'repeat,no-repeat,repeat-y'
         },
