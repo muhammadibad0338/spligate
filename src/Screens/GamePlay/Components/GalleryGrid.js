@@ -67,7 +67,7 @@ const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
                 flexDirection: `${reverse ? 'column' : 'column-reverse' }`,
             }
         })}  >
-            {/* left container */}
+            {/* Single Image container */}
             <LargeImageBox>
                 <a style={{
                     display: 'flex',
@@ -81,7 +81,7 @@ const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
                     boxShadow: '0 3px 24px 0 rgb(0 0 0 / 60%)',
                 }} ></a>
             </LargeImageBox>
-            {/* right container */}
+            {/* Multiple Image container */}
             <Box sx={(theme) => ({
                 display: 'flex',
                 flexDirection: 'row',
@@ -92,7 +92,7 @@ const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
                     alignItems: 'center'
                 }
             })} >
-                {/* column container */}
+                {/* column container 1*/}
                 <Box sx={(theme) => ({
                     display: 'flex',
                     flexDirection: 'column',
@@ -133,7 +133,7 @@ const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
                         }} ></a>
                     </SmallImageBox>
                 </Box>
-                {/* column container */}
+                {/* column container 2*/}
                 <Box sx={(theme) => ({
                     display: 'flex',
                     flexDirection: 'column',
