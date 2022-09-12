@@ -261,7 +261,7 @@ const NavBar = (props) => {
                                             className={classes.appBarMenu}
                                         // style={{ backgroundColor: 'black' }}
                                         >
-                                            <MenuItem onClick={closeAppbarNavItem}>Game</MenuItem>
+                                            <MenuItem onClick={closeAppbarNavItem}>GamePlay</MenuItem>
                                             <MenuItem onClick={closeAppbarNavItem}>My account</MenuItem>
                                             <MenuItem onClick={closeAppbarNavItem}>Logout</MenuItem>
                                         </Menu>

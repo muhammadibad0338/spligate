@@ -3,6 +3,7 @@ import {Routes,Route, } from "react-router-dom"
 import Home from '../Screens/Home/Home'
 import About from '../Screens/About/About'
 import { withRouter } from './WithRouter'
+import GamePlay from '../Screens/GamePlay/GamePlay'
 
 
 const routesArr = [
@@ -13,6 +14,10 @@ const routesArr = [
     {
         path: "/1047",
         Component: About
+    },
+    {
+        path: "/gameplay",
+        Component: GamePlay
     }
 ]
 
