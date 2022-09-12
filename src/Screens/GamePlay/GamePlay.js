@@ -45,15 +45,19 @@ const GamePlay = () => {
             }} />
             <Container maxWidth="lg" >
                 <Grid container >
-                    <Grid item xs={12} >
-                    <GalleryGrid 
-                         img1='https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2dcf93fed30da947e0abc_HighresScreenshot00021.jpg'
-                         img2='https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2dd753cbe191fe0c4f141_HighresScreenshot00006.jpg'
-                         img3='https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2dd8c329275734369ed44_HighresScreenshot00012.jpg'
-                         img4='https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2dd809897569cd9666e1a_HighresScreenshot00008.jpg'
-                         img5='https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2dd9950c0230decb2287c_HighresScreenshot00016.jpg'
-                    />
-                    </Grid>
+                    {
+                        State.gallery.map((images, i) => {
+                            let reverse =  (i)%2 ==0 ?true :false;
+                            return (
+                                <Grid item xs={12} key={i} >
+                                    <GalleryGrid
+                                        {...images}
+                                        reverse={reverse}
+                                    />
+                                </Grid>
+                            )
+                        })
+                    }
                 </Grid>
             </Container>
         </div>

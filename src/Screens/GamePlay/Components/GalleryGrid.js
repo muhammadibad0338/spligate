@@ -56,13 +56,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const GalleryGrid = ({ img1, img2, img3, img4,img5 }) => {
+const GalleryGrid = ({ img1, img2, img3, img4,img5,reverse }) => {
     const classes = useStyles();
     return (
         <Box sx={(theme) => ({
             height:'100%',
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: `${reverse ? 'row' : 'row-reverse' }`,
             [theme.breakpoints.down("md")]: {
                 flexDirection: 'column',
             }
