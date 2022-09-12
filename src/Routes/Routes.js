@@ -4,6 +4,7 @@ import Home from '../Screens/Home/Home'
 import About from '../Screens/About/About'
 import { withRouter } from './WithRouter'
 import GamePlay from '../Screens/GamePlay/GamePlay'
+import Arenas from '../Screens/Arenas/Arenas'
 
 
 const routesArr = [
@@ -18,6 +19,10 @@ const routesArr = [
     {
         path: "/gameplay",
         Component: GamePlay
+    },
+    {
+        path: "/arenas",
+        Component: Arenas
     }
 ]
 

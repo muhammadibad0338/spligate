@@ -6,8 +6,7 @@ import {
 import { makeStyles } from "@mui/styles";
 import darkBg from "../../Assets/Images/homeDarkbg.png";
 import MainHeading from '../../Components/MainHeading';
-import State from "../../State/GamePlay.json";
-import GalleryGrid from './Components/GalleryGrid';
+import State from "../../State/Arenas.json";
 
 const useStyles = makeStyles((theme) => ({
     banner: {
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const GamePlay = () => {
+const Arenas = () => {
     const classes = useStyles();
 
     return (
@@ -41,25 +40,8 @@ const GamePlay = () => {
                 fontWeight: '800',
                 padding: { lg: '60px 0px', sm: '30px 0px', xs: '10px 0px' }
             }} />
-            <Container maxWidth="lg" >
-                <Grid container >
-                    {
-                        State.gallery.map((images, i) => {
-                            let reverse =  (i)%2 ==0 ?true :false;
-                            return (
-                                <Grid item xs={12} key={i} >
-                                    <GalleryGrid
-                                        {...images}
-                                        reverse={reverse}
-                                    />
-                                </Grid>
-                            )
-                        })
-                    }
-                </Grid>
-            </Container>
         </div>
     )
 }
 
-export default GamePlay
+export default Arenas
