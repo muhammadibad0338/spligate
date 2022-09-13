@@ -1,12 +1,13 @@
 import React from 'react'
 import {
     Grid,
-    Container
+    Container,
+    Typography
 } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import darkBg from "../../Assets/Images/homeDarkbg.png";
 import State from "../../State/Faqs.json";
-import MainHeading from '../../Components/MainHeading';
+import SmallMainHeading from '../../Components/SmallMainHeading';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -27,6 +28,37 @@ const useStyles = makeStyles((theme) => ({
             backgroundRepeat: 'repeat,no-repeat,repeat-y'
         },
     },
+    subHead: {
+        fontFamily: ["Motserrat", "sans-serif"],
+        fontSize: '1.55rem !important',
+        lineHeight: '30px !important',
+        fontWeight: '400 !important',
+        textTransform: 'upperCase',
+        margin: '10px 0px !important',
+        color:'white'
+    },
+    smallerTitle: {
+        fontSize: '1.2rem !important',
+        lineHeight: '30px',
+        fontFamily: ["Motserrat", "sans-serif"],
+        color: 'white',
+        fontWeight: '400 !important',
+        textAlign: 'left',
+        opacity: 1,
+        marginBottom: '20px !important',
+        [theme.breakpoints.down("md")]: {
+            fontSize: '1.1rem !important',
+            lineHeight: '30px',
+            textAlign: 'left',
+            marginBottom: '20px !important',
+        },
+        [theme.breakpoints.down("sm")]: {
+            fontSize: '1.1rem !important',
+            lineHeight: '30px',
+            textAlign: 'left',
+            marginBottom: '20px !important',
+        }
+    },
 }));
 
 
@@ -38,7 +70,7 @@ const Faqs = () => {
                 <Grid container >
                     <Grid item xs={12} sx={(theme) => ({
                         width: '100%',
-                        marginTop: '140px',
+                        marginTop: '100px',
                         padding: '30px 40px',
                         backgroundColor: '#151719',
                         [theme.breakpoints.down('md')]: {
@@ -57,12 +89,22 @@ const Faqs = () => {
                             marginBottom: '60px'
                         },
                     })} >
-                        <MainHeading text={State.mainHead} sx={{
+                        <SmallMainHeading text={State.mainHead} sx={{
                             color: 'white',
                             textAlign: 'left',
                             textShadow: '0 3px 12px rgb(0 0 0 / 50%)',
                             fontWeight: '800',
                         }} />
+                        {
+                            State.faqs.map((qa, i) => {
+                                return (
+                                    <div key={i} >
+                                        <Typography className={classes.subHead} >{qa.qestion}</Typography>
+                                        <Typography className={classes.smallerTitle} >{qa.answer}</Typography>
+                                    </div>
+                                )
+                            })
+                        }
                     </Grid>
                 </Grid>
             </Container>
