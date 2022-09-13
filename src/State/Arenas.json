@@ -7,9 +7,55 @@
             "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2098f4c1e96dd9d98a86f_Foregone%20Destruction.jpg"
         },
         {
+            "heading": "KARMAN STATION",
+            "description": "Sector 3B of the orbital Karman Station was originally designated as a spaceport hangar, but was later retrofitted as a Splitgate arena to replace the ill-fated Station Outpost. Most spacecraft originating from this hangar will pass through at least one interplanetary portal during the course of their journey.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f208af7de6eaad2617f737_Karman%20Station.png"
+        },
+        {
+            "heading": "IMPACT",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/60edb2ec7e17c5288106c13c_Impact_1080p.png"
+        },
+        {
+            "heading": "OASIS",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/60edb4452c10e5287103efab_NewOasis_Website_1080p.png"
+        },
+        {
+            "heading": "LAVAWELL",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f20980945ea996145435b2_Crag.jpg"
+        },
+        {
             "heading": "FOREGONE DESTRUCTION",
             "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
-            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2098f4c1e96dd9d98a86f_Foregone%20Destruction.jpg"
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/629eb3ef7fdaa67cc0b711c3_Abyss.jpg"
+        },
+        {
+            "heading": "ABYSS",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/60edb45ac6357d70ea8dda25_NewPantheon_Website_1080p.png"
+        },
+        {
+            "heading": "LAVAWELL",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fbb1b982425945f0603410a_5ee75b361813af668d0b86d6_Olympus%201920.jpg"
+        },
+        {
+            "heading": "ABYSS",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fbb1ba59c6db4d9b141d998_5ee75b0394cf8f5f0e63409a_Highwind%201920.jpg"
+        },
+        {
+            "heading": "FOREGONE DESTRUCTION",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fbb1b8b25d9ac511301da51_5fb71cd51de4312e7f316430_Silo%201920.jpg"
+        },
+        {
+            "heading": "LAVAWELL",
+            "description": "Sitting between a large-scale Proelium Reactor and a Supermassive Portal, Foregone Destruction's original purpose is still unknown. Many worship these ancient remnants, left behind by a mysterious civilization. Identical ruins exist on the planet it was found.",
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/60edb4760f1623eca279df2a_NewStadium_Website_1080p.png"
         }
+        
     ]
 }

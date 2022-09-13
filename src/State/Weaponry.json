@@ -1,0 +1,33 @@
+{
+    "mainHead": "WEAPONRY",
+    "gallery": [
+        {
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fb6ed69d5eb3e675708c7b6_Sniperx1000.png",
+            "title": "SNIPER"
+        },
+        {
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fb6eddf1513538f679175e5_Shotgunx1000.png",
+            "title": "SHOTGUN"
+        },
+        {
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fb6dce90278d8258e2459fb_Rocket%20Launcherx1000.png",
+            "title": "ROCKET LAUNCHER"
+        },
+        {
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fb6ee4a907e579045b51450_Railgunx1000.png",
+            "title": "RAILGUN"
+        },
+        {
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fb6eea9174f7040e31f517f_Pistolx1200.png",
+            "title": "PISTOL"
+        },
+        {
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fb6ef1c7f01e8a906703e9d_Battle%20Riflex1000.png",
+            "title": "BATTLE RIFLE"
+        },
+        {
+            "image": "https://assets-global.website-files.com/5c2fb32631b7b255f486e083/5fb6eddf1513538f679175e5_Shotgunx1000.png",
+            "title": "SHOTGUN"
+        }
+    ]
+}
