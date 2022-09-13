@@ -6,6 +6,8 @@ import { makeStyles } from "@mui/styles";
 import darkBg from "../../Assets/Images/homeDarkbg.png";
 import MainHeading from '../../Components/MainHeading';
 import State from "../../State/News.json";
+import NewsImage from './Components/NewsImage';
+import TransparentBtn from '../../Components/TransparentBtn';
 
 const useStyles = makeStyles((theme) => ({
     banner: {
@@ -39,24 +41,30 @@ const News = () => {
                 fontWeight: '800',
                 padding: { lg: '60px 0px', sm: '30px 0px', xs: '10px 0px' }
             }} />
-            {/* <Grid container >
-
-                {
-                    State.gallery.map((gallery, i) => {
-                        let reverse = (i) % 2 == 0 ? true : false;
-                        return (
-                            <Grid key={i} item xs={12} >
-                                <ArenaImage
-                                    Bg={gallery.image}
-                                    heading={gallery.heading}
-                                    description={gallery.description}
-                                    reverse={reverse}
+            <Grid container >
+                <Grid item xs={12}
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        flexWrap: 'wrap',
+                        marginBottom: '47px'
+                    }}
+                >
+                    {
+                        State.gallery.map((galry, i) => {
+                            return (
+                                <NewsImage
+                                    image={galry.image}
+                                    title={galry.title}
                                 />
-                            </Grid>
-                        )
-                    })
-                }
-            </Grid> */}
+                            )
+                        })
+                    }
+                </Grid>
+                <Grid item xs={12} sx={{display:'flex',justifyContent:'center',alignItems:'center',marginBottom:'20px'}} >
+                    <TransparentBtn text='show more' />
+                </Grid>
+            </Grid>
         </div>
     )
 }

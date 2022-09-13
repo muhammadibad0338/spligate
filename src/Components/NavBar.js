@@ -208,7 +208,7 @@ const NavBar = (props) => {
         { nav: 'Game Info', showIcon: true, MdComp: GameInfoMd },
         { nav: 'Season', showIcon: false, path: '/' },
         { nav: 'Community', showIcon: true, MdComp: GameInfoMd },
-        { nav: 'News', showIcon: false, path: '/' },
+        { nav: 'News', showIcon: false, path: '/news' },
         { nav: 'Explore', showIcon: true, MdComp: GameInfoMd },
         { nav: 'Play Now', showIcon: true, MdComp: GameInfoMd }
     ];
