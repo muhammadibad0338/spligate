@@ -25,6 +25,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { GameInfoMd } from "./MdMenuItem"
 import { useNavigate } from "react-router-dom";
 
 
@@ -124,21 +125,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const navItems = [
-    { nav: 'About1047', showIcon: false, path: '/1047' },
-    { nav: 'Game Info', showIcon: true, },
-    { nav: 'Season', showIcon: false, path: '/' },
-    { nav: 'Community', showIcon: true, },
-    { nav: 'News', showIcon: false, path: '/' },
-    { nav: 'Explore', showIcon: true, },
-    { nav: 'Play Now', showIcon: true }
-];
+
 
 
 const NavBar = (props) => {
     const classes = useStyles();
     let navigate = useNavigate();
-    
+
     const { window } = props;
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -166,9 +159,8 @@ const NavBar = (props) => {
             <List>
                 {navItems.map((item, index) => (
                     <ListItem key={item.nav} disablePadding>
-                        <ListItemButton className={classes.navItemBtn} onClick={()=>{
-                            if(!item.showIcon)
-                            {
+                        <ListItemButton className={classes.navItemBtn} onClick={() => {
+                            if (!item.showIcon) {
                                 navigate(`${item.path}`);
                             }
                         }} >
@@ -195,7 +187,7 @@ const NavBar = (props) => {
     }
 
 
-    const openAppbarNavItem = (event, haveMenu,path) => {
+    const openAppbarNavItem = (event, haveMenu, path) => {
         if (haveMenu) {
             setAnchorEl(event.currentTarget);
         }
@@ -204,13 +196,25 @@ const NavBar = (props) => {
             // console.log(path,"haveMenu")
             navigate(`${path}`);
         }
-        
-    }
 
+    }
 
     const closeAppbarNavItem = () => {
         setAnchorEl(null);
     }
+
+    const navItems = [
+        { nav: 'About1047', showIcon: false, path: '/1047' },
+        { nav: 'Game Info', showIcon: true, MdComp: GameInfoMd },
+        { nav: 'Season', showIcon: false, path: '/' },
+        { nav: 'Community', showIcon: true, MdComp: GameInfoMd },
+        { nav: 'News', showIcon: false, path: '/' },
+        { nav: 'Explore', showIcon: true, MdComp: GameInfoMd },
+        { nav: 'Play Now', showIcon: true, MdComp: GameInfoMd }
+    ];
+
+
+
 
 
     return (
@@ -232,42 +236,46 @@ const NavBar = (props) => {
                                 <MenuIcon />
                             </IconButton>
                             <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                {navItems.map((item, ind) => (
-                                    <div>
-                                        <Button className={classes.navItemBtn}
-                                            id={item + "button"}
-                                            // aria-controls={open ? (item + "menu") : undefined}
-                                            // aria-haspopup="true"
-                                            // aria-expanded={open ? 'true' : undefined}
-                                            onClick={(e) => openAppbarNavItem(e, item.showIcon,item?.path)}
-                                        >
-                                            <Typography key={item} className={classes.navItem} >
-                                                {item.nav}
-                                            </Typography>
-                                            {item?.showIcon &&
-                                                <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
-                                            }
-                                        </Button>
-                                        <Menu
-                                            id={item + "menu"}
-                                            anchorEl={anchorEl}
-                                            open={open}
-                                            onClose={closeAppbarNavItem}
-                                            disableScrollLock={true}
-                                            MenuListProps={{
-                                                'aria-labelledby': (item + "button"),
-                                            }}
-                                            sx={{ display: { xs: 'none', md: 'flex' } }}
-                                            className={classes.appBarMenu}
-                                        // style={{ backgroundColor: 'black' }}
-                                        >
-                                            <MenuItem onClick={closeAppbarNavItem}>GamePlay</MenuItem>
-                                            <MenuItem onClick={closeAppbarNavItem}>My account</MenuItem>
-                                            <MenuItem onClick={closeAppbarNavItem}>Logout</MenuItem>
-                                        </Menu>
+                                {navItems.map((Item, ind) => {
+                                    let { MdComp } = Item
+                                    return (
+                                        <div key={ind} >
+                                            <Button className={classes.navItemBtn}
+                                                id={Item + "button"}
+                                                // aria-controls={open ? (Item + "menu") : undefined}
+                                                // aria-haspopup="true"
+                                                // aria-expanded={open ? 'true' : undefined}
+                                                onClick={(e) => openAppbarNavItem(e, Item.showIcon, Item?.path)}
+                                            >
+                                                <Typography key={Item} className={classes.navItem} >
+                                                    {Item.nav}
+                                                </Typography>
+                                                {Item?.showIcon &&
+                                                    <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
+                                                }
+                                            </Button>
+                                            {Item?.showIcon && <Menu
+                                                id={Item + "menu"}
+                                                anchorEl={anchorEl}
+                                                open={open}
+                                                onClose={closeAppbarNavItem}
+                                                disableScrollLock={true}
+                                                MenuListProps={{
+                                                    'aria-labelledby': (Item + "button"),
+                                                }}
+                                                sx={{ display: { xs: 'none', md: 'flex' } }}
+                                                className={classes.appBarMenu}
+                                            // style={{ backgroundColor: 'black' }}
+                                            >
+                                                {
+                                                    <MdComp key={ind} closeAppbarNavItem={closeAppbarNavItem} />
+                                                }
+                                            </Menu>}
 
-                                    </div>
-                                ))}
+                                        </div>
+                                    )
+                                }
+                                )}
                                 <Button className={classes.navItemBtnIcon}
                                 >
                                     <Typography className={classes.navItem} >

@@ -41,12 +41,22 @@ const Arenas = () => {
                 padding: { lg: '60px 0px', sm: '30px 0px', xs: '10px 0px' }
             }} />
             <Grid container >
-                <Grid item xs={12} >
-                    <ArenaImage
-                        Bg='https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2098f4c1e96dd9d98a86f_Foregone%20Destruction.jpg'
-                        heading='FOREGONE DESTRUCTION'
-                    />
-                </Grid>
+
+                {
+                    State.gallery.map((gallery, i) => {
+                        let reverse = (i) % 2 == 0 ? true : false;
+                        return (
+                            <Grid key={i} item xs={12} >
+                                <ArenaImage
+                                    Bg={gallery.image}
+                                    heading={gallery.heading}
+                                    description={gallery.description}
+                                    reverse={reverse}
+                                />
+                            </Grid>
+                        )
+                    })
+                }
             </Grid>
         </div>
     )
