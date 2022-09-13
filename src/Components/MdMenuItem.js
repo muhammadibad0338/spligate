@@ -15,7 +15,7 @@ export const GameInfoMd = ({ closeAppbarNavItem }) => {
         },
         {
             name: 'WEAPONRY',
-            path: '/'
+            path: '/weaponry'
         },
     ];
     return (
@@ -31,7 +31,6 @@ export const GameInfoMd = ({ closeAppbarNavItem }) => {
                             key={i}
                             onClick={() => {
                                 navigate(`${menu.path}`)
-                                console.log(menu.path,"path")
                                 closeAppbarNavItem()
 
                             }}

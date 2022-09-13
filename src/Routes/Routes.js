@@ -5,6 +5,7 @@ import About from '../Screens/About/About'
 import { withRouter } from './WithRouter'
 import GamePlay from '../Screens/GamePlay/GamePlay'
 import Arenas from '../Screens/Arenas/Arenas'
+import Weaponry from '../Screens/Weaponry/Weaponry'
 
 
 const routesArr = [
@@ -23,6 +24,10 @@ const routesArr = [
     {
         path: "/arenas",
         Component: Arenas
+    },
+    {
+        path: "/weaponry",
+        Component: Weaponry
     }
 ]
 
