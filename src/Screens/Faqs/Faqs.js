@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
             backgroundSize: 'auto,cover,cover',
         },
         [theme.breakpoints.down("md")]: {
-            backgroundImage: `-webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),url(${darkBg})`,
+            backgroundImage: `url(${darkBg})`,
             backgroundSize: 'auto, cover,cover',
             backgroundPosition: '0px 0px, 82% 0%,50% 0%',
             backgroundRepeat: 'repeat,no-repeat,repeat-y'
@@ -31,16 +31,40 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Faqs = () => {
+    const classes = useStyles();
     return (
         <div className={classes.banner}  >
-            <Container maxWidth='lg' >
-                <MainHeading text={State.mainHead} sx={{
-                    color: 'white',
-                    textAlign: 'right',
-                    textShadow: '0 3px 12px rgb(0 0 0 / 50%)',
-                    fontWeight: '800',
-                    padding: { lg: '60px 0px', sm: '30px 0px', xs: '10px 0px' }
-                }} />
+            <Container maxWidth='lg'  >
+                <Grid container >
+                    <Grid item xs={12} sx={(theme) => ({
+                        width: '100%',
+                        marginTop: '140px',
+                        padding: '30px 40px',
+                        backgroundColor: '#151719',
+                        [theme.breakpoints.down('md')]: {
+                            marginTop: '100px',
+                            marginBottom: '60px',
+                        },
+                        [theme.breakpoints.down('sm')]: {
+                            marginTop: '60px',
+                            paddingRight: '20px',
+                            paddingLEft: '20px'
+                        },
+                        [theme.breakpoints.down('m')]: {
+                            marginTop: '40px',
+                            paddingRight: '10px',
+                            paddingLeft: '10px',
+                            marginBottom: '60px'
+                        },
+                    })} >
+                        <MainHeading text={State.mainHead} sx={{
+                            color: 'white',
+                            textAlign: 'left',
+                            textShadow: '0 3px 12px rgb(0 0 0 / 50%)',
+                            fontWeight: '800',
+                        }} />
+                    </Grid>
+                </Grid>
             </Container>
         </div>
     )

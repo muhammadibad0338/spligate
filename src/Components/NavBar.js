@@ -206,7 +206,7 @@ const NavBar = (props) => {
     const navItems = [
         { nav: 'About1047', showIcon: false, path: '/1047' },
         { nav: 'Game Info', showIcon: true, MdComp: GameInfoMd },
-        { nav: 'faq', showIcon: false, path: '/' },
+        { nav: 'faq', showIcon: false, path: '/faq' },
         { nav: 'Community', showIcon: true, MdComp: GameInfoMd },
         { nav: 'News', showIcon: false, path: '/news' },
         { nav: 'Explore', showIcon: true, MdComp: GameInfoMd },

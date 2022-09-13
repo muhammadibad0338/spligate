@@ -7,6 +7,7 @@ import GamePlay from '../Screens/GamePlay/GamePlay'
 import Arenas from '../Screens/Arenas/Arenas'
 import Weaponry from '../Screens/Weaponry/Weaponry'
 import News from '../Screens/News/News'
+import Faqs from '../Screens/Faqs/Faqs'
 
 
 const routesArr = [
@@ -33,6 +34,10 @@ const routesArr = [
     {
         path: "/news",
         Component: News
+    },
+    {
+        path: "/faq",
+        Component: Faqs
     }
 ]
 
