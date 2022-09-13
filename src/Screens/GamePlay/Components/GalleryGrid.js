@@ -1,12 +1,9 @@
 import React from 'react';
 import {
     Box,
-    Typography,
-    Grid,
-    Container
 } from "@mui/material"
 import { makeStyles } from "@mui/styles";
-import { alpha, styled } from '@mui/system';
+import {  styled } from '@mui/system';
 
 
 const LargeImageBox = styled(Box)(({ theme }) => ({

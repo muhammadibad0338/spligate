@@ -1,12 +1,12 @@
 import React from 'react';
 import {
     Grid,
-    Container
 } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import darkBg from "../../Assets/Images/homeDarkbg.png";
 import MainHeading from '../../Components/MainHeading';
 import State from "../../State/Arenas.json";
+import ArenaImage from './Components/ArenaImage';
 
 const useStyles = makeStyles((theme) => ({
     banner: {
@@ -40,6 +40,14 @@ const Arenas = () => {
                 fontWeight: '800',
                 padding: { lg: '60px 0px', sm: '30px 0px', xs: '10px 0px' }
             }} />
+            <Grid container >
+                <Grid item xs={12} >
+                    <ArenaImage
+                        Bg='https://assets-global.website-files.com/5c2fb32631b7b255f486e083/61f2098f4c1e96dd9d98a86f_Foregone%20Destruction.jpg'
+                        heading='FOREGONE DESTRUCTION'
+                    />
+                </Grid>
+            </Grid>
         </div>
     )
 }
