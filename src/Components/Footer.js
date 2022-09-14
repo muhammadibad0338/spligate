@@ -90,13 +90,29 @@ const Footer = () => {
                         [theme.breakpoints.down("md")]: {
                             justifyContent: 'center',
                             marginBottom: '20px'
+                        },
+                        [theme.breakpoints.down("m")]: {
+                            flexDirection:'column',
+                            alignItems:'center',
+                            paddingLeft: '0px',
+                            justifyContent:'center',
+                            marginBottom: '10px'
                         }
                     })} >
                         <img className={classes.logoImg1} src={logo1} />
-                        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginLeft: '20px' }} >
+                        <Box sx={(theme) => ({
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            marginLeft: '20px',
+                            [theme.breakpoints.down("m")]: {
+                                marginLeft:'0px'
+                            }
+                        })}>
                             <img className={classes.logo2} src={logo2} />
                             <img className={classes.logo3} src={logo3} />
-                        </div>
+                        </Box>
                     </Grid>
                     <Grid item xs={12} md={6} sx={(theme) => ({
                         height: '100%',
