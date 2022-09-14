@@ -1,7 +1,6 @@
 import React from 'react';
 import {
     Grid,
-    Container
 } from "@mui/material"
 import { makeStyles } from "@mui/styles";
 import darkBg from "../../Assets/Images/homeDarkbg.png";
