@@ -49,7 +49,13 @@ const Btn = styled(Button)(({ theme }) => ({
     color: 'white',
     fontFamily: ["Motserrat", "sans-serif"].join(","),
     fontWeight:'500',
-    width:'fit-content'
+    width:'fit-content',
+    transition: '0.2 s',
+    '&:hover': {
+        borderColor: 'hsla(0, 0%, 100%, 0.5)',
+        transform:'scale(1.03)',
+        transition: '0.2 s'
+    }
     // marginBottom:'80px',
     // [theme.breakpoints.down("md")]: {
     //     marginBottom:'60px'
