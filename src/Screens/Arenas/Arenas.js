@@ -7,6 +7,8 @@ import darkBg from "../../Assets/Images/homeDarkbg.png";
 import MainHeading from '../../Components/MainHeading';
 import State from "../../State/Arenas.json";
 import ArenaImage from './Components/ArenaImage';
+import Fade from 'react-reveal/Fade';
+
 
 const useStyles = makeStyles((theme) => ({
     banner: {
@@ -47,12 +49,14 @@ const Arenas = () => {
                         let reverse = (i) % 2 == 0 ? true : false;
                         return (
                             <Grid key={i} item xs={12} >
-                                <ArenaImage
-                                    Bg={gallery.image}
-                                    heading={gallery.heading}
-                                    description={gallery.description}
-                                    reverse={reverse}
-                                />
+                                <Fade>
+                                    <ArenaImage
+                                        Bg={gallery.image}
+                                        heading={gallery.heading}
+                                        description={gallery.description}
+                                        reverse={reverse}
+                                    />
+                                </Fade>
                             </Grid>
                         )
                     })

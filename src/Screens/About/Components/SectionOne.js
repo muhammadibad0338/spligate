@@ -18,6 +18,7 @@ import studioLogo6 from "../../../Assets/Images/studioLogo6.png";
 import studioLogo7 from "../../../Assets/Images/studioLogo7.png";
 import TransparentBtn from '../../../Components/TransparentBtn';
 import BreifeTitle from './BreifeTitle';
+import Fade from 'react-reveal/Fade';
 
 
 
@@ -150,6 +151,8 @@ const SectionOne = () => {
                     </div>
                 </div>
                 <TransparentBtn text='join us' sx={{ marginBottom: '40px' }} />
+                <Fade Big >
+
                 <BreifeTitle
                     title={State.head2}
                     titleSx={{
@@ -160,6 +163,7 @@ const SectionOne = () => {
                         color: 'white'
                     }}
                 />
+                </Fade>
             </Grid>
         </Grid>
     )

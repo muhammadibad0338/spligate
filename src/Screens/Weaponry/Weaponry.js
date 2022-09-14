@@ -8,7 +8,7 @@ import darkBg from "../../Assets/Images/homeDarkbg.png";
 import State from "../../State/Weaponry.json"
 import MainHeading from '../../Components/MainHeading';
 import WeaponryGallery from './Components/WeaponryGallery';
-
+import Slide from 'react-reveal/Slide'
 
 const useStyles = makeStyles((theme) => ({
     banner: {
@@ -59,11 +59,12 @@ const Weaponry = () => {
                     {
                         State.gallery.map((gallery, i) => {
                             return (
-                                <WeaponryGallery
-                                    key={i}
-                                    Bg={gallery.image}
-                                    title={gallery.title}
-                                />
+                                <Slide bottom key={i} >
+                                    <WeaponryGallery
+                                        Bg={gallery.image}
+                                        title={gallery.title}
+                                    />
+                                </Slide>
                             )
                         })
                     }
