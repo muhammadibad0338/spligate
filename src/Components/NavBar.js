@@ -74,6 +74,10 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             borderBottom: "2px solid #6DC2D3",
             cursor: 'pointer',
+            "& p": {
+                color: '#6DC2D3',
+                transition: '0.2 s'
+            },
             "& span": {
                 color: '#6DC2D3',
                 transition: '0.2 s'
@@ -114,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
     },
     appBarMenu: {
         '& .MuiPaper-root': {
-            padding: '10px 25px 10px 15px',
+            padding: '0px 15px 0px 0px',
             backgroundColor: 'black',
             borderRadius: '0px',
             boxShadow: 'none',
