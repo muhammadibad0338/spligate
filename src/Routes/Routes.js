@@ -16,6 +16,10 @@ const routesArr = [
         Component: Home
     },
     {
+        path: "/spligate",
+        Component: Home
+    },
+    {
         path: "/1047",
         Component: About
     },
