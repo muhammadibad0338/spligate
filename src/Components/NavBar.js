@@ -8,23 +8,18 @@ import {
     Box,
     Button,
     List,
-    Divider,
     Typography,
     ListItem,
     ListItemButton,
-    ListItemIcon,
     ListItemText,
     SwipeableDrawer
 } from "@mui/material"
 import { makeStyles } from "@mui/styles"
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from "../Assets/logo.svg";
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import { GameInfoMd, CommunityMd, ExploreMd, PlayNowMd } from "./MdMenuItem"
 import { GameInfoXs,CommunityXs,ExploreXs,PlayNowXs } from "./XsMenuItem";
 import { useNavigate, Link } from "react-router-dom";
@@ -217,9 +212,7 @@ const NavBar = (props) => {
         </Box>
     )
 
-    const openDrawerNavItem = (i) => {
-
-    }
+    
 
 
     const openAppbarNavItem = (event, haveMenu, path, ind) => {
