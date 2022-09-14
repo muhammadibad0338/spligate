@@ -29,6 +29,22 @@ const useStyles = makeStyles((theme) => ({
             transition: '0.2 s'
         }
     },
+    Icon:{
+        '&:hover': {
+            color: '#6DC2D3',
+            transition: '0.2 s',
+            cursor: 'pointer',
+            "& p": {
+                color: '#6DC2D3',
+                transition: '0.2 s'
+            },
+            "& span": {
+                color: '#6DC2D3',
+                transition: '0.2 s'
+            },
+            transition: '0.2 s'
+        }
+    }
 }));
 
 
@@ -75,6 +91,7 @@ export const GameInfoMd = ({ closeAppbarNavItem }) => {
 
 
 export const CommunityMd = ({ closeAppbarNavItem }) => {
+    const classes = useStyles();
     let Icons = [
         [{
             Icon: YouTubeIcon,
@@ -119,7 +136,7 @@ export const CommunityMd = ({ closeAppbarNavItem }) => {
 
                             }}
                         >{
-                                Menu.map(({ Icon }) => <div style={{}} >{<Icon />}</div>)
+                                Menu.map(({ Icon }) => <div className={classes.Icon} >{<Icon />}</div>)
                             } </MenuItem>
                     )
                 })
