@@ -25,7 +25,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { GameInfoMd } from "./MdMenuItem"
+import { GameInfoMd,CommunityMd,ExploreMd  } from "./MdMenuItem"
 import { useNavigate, Link } from "react-router-dom";
 
 
@@ -122,8 +122,10 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: 'black',
             borderRadius: '0px',
             boxShadow: 'none',
+            width:'144px',
             '& .MuiMenu-list': {
-                color: 'white'
+                color: 'white',
+                
             },
         }
     }
@@ -142,6 +144,7 @@ const NavBar = (props) => {
 
     const [indDrawerNavItem, setindDrawerNavItem] = useState(-1);
     const [indAppbarNavItem, setindAppbarNavItem] = useState(-1);
+    const [MenuOpenNumber, setMenuOpenNumber] = useState(-1);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -192,9 +195,10 @@ const NavBar = (props) => {
     }
 
 
-    const openAppbarNavItem = (event, haveMenu, path) => {
+    const openAppbarNavItem = (event, haveMenu, path,ind) => {
         if (haveMenu) {
             setAnchorEl(event.currentTarget);
+            setMenuOpenNumber(ind)
         }
         else {
             setAnchorEl(null)
@@ -206,15 +210,16 @@ const NavBar = (props) => {
 
     const closeAppbarNavItem = () => {
         setAnchorEl(null);
+        setMenuOpenNumber(-1)
     }
 
     const navItems = [
         { nav: 'About1047', showIcon: false, path: '/1047' },
         { nav: 'Game Info', showIcon: true, MdComp: GameInfoMd },
         { nav: 'faq', showIcon: false, path: '/faq' },
-        { nav: 'Community', showIcon: true, MdComp: GameInfoMd },
+        { nav: 'Community', showIcon: true, MdComp: CommunityMd  },
         { nav: 'News', showIcon: false, path: '/news' },
-        { nav: 'Explore', showIcon: true, MdComp: GameInfoMd },
+        { nav: 'Explore', showIcon: true, MdComp: ExploreMd },
         { nav: 'Play Now', showIcon: true, MdComp: GameInfoMd }
     ];
 
@@ -252,7 +257,7 @@ const NavBar = (props) => {
                                                 // aria-controls={open ? (Item + "menu") : undefined}
                                                 // aria-haspopup="true"
                                                 // aria-expanded={open ? 'true' : undefined}
-                                                onClick={(e) => openAppbarNavItem(e, Item.showIcon, Item?.path)}
+                                                onClick={(e) => openAppbarNavItem(e, Item.showIcon, Item?.path,ind)}
                                             >
                                                 <Typography key={Item} className={classes.navItem} >
                                                     {Item.nav}
@@ -261,7 +266,7 @@ const NavBar = (props) => {
                                                     <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
                                                 }
                                             </Button>
-                                            {Item?.showIcon && <Menu
+                                            {(Item?.showIcon && MenuOpenNumber == ind ) && <Menu
                                                 id={Item + "menu"}
                                                 anchorEl={anchorEl}
                                                 open={open}
@@ -272,6 +277,7 @@ const NavBar = (props) => {
                                                 }}
                                                 sx={{ display: { xs: 'none', md: 'flex' } }}
                                                 className={classes.appBarMenu}
+                                                key={ind}
                                             // style={{ backgroundColor: 'black' }}
                                             >
                                                 {
