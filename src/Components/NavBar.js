@@ -26,7 +26,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { GameInfoMd } from "./MdMenuItem"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -67,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
     navItemBtn: {
         maxWidth: '940px',
         height: '100%',
+        borderRadius:'0px !important',
         // padding: '0px 14px',
         padding: '10px 25px 10px 15px',
         backgroundColor: 'black',
@@ -223,9 +224,11 @@ const NavBar = (props) => {
                 <Container maxWidth="xl" style={{ padding: '0px 0px', minHeight: 'auto' }} >
                     <Toolbar variant="dense" disableGutters >
                         <div style={{ width: "100%", display: 'flex', justifyContent: 'space-between' }}>
-                            <div style={{ margin: 'auto 0px', padding: '5px 0px' }} >
-                                <img className={classes.logo} src={logo} alt="logo" />
-                            </div>
+                            <Link to="/" >
+                                <div style={{ margin: 'auto 0px', padding: '5px 0px' }} >
+                                    <img className={classes.logo} src={logo} alt="logo" />
+                                </div>
+                            </Link>
                             <IconButton
                                 color="inherit"
                                 aria-label="open drawer"
