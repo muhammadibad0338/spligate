@@ -131,12 +131,7 @@ const BannerOne = () => {
     return (
         <Grid container className={classes.banner1} >
             {/* Tranfron 3d wala is GRID pe lage ga */}
-            <Grid item xs={12} className={classes.banner1MainCntnr}
-            // style={{
-            //         willChange:'transform',
-            //         transform:`translate3d(0%,${scrollPosition}px,0px) scale3d(1,1,1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg,0deg)`,
-            //         transformStyle:'preserve-3d',
-            //     }} 
+            <Grid item xs={12} className={classes.banner1MainCntnr} 
             >
                 <div>
                     <img src={llogo} alt="logo" className={classes.llogo} />
