@@ -152,7 +152,6 @@ const NavBar = (props) => {
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const [indDrawerNavItem, setindDrawerNavItem] = useState(-1);
-    const [indAppbarNavItem, setindAppbarNavItem] = useState(-1);
     const [MenuOpenNumber, setMenuOpenNumber] = useState(-1);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
@@ -164,7 +163,6 @@ const NavBar = (props) => {
         setindDrawerNavItem(-1)
     };
 
-    const container = window !== undefined ? () => window().document.body : undefined;
 
 
     const list = () => (
