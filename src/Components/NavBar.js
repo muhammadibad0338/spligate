@@ -25,7 +25,8 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { GameInfoMd,CommunityMd,ExploreMd,PlayNowMd  } from "./MdMenuItem"
+import { GameInfoMd, CommunityMd, ExploreMd, PlayNowMd } from "./MdMenuItem"
+import { GameInfoXs,CommunityXs,ExploreXs,PlayNowXs } from "./XsMenuItem";
 import { useNavigate, Link } from "react-router-dom";
 
 
@@ -67,7 +68,7 @@ const useStyles = makeStyles((theme) => ({
     navItemBtn: {
         maxWidth: '940px',
         height: '100%',
-        borderRadius:'0px !important',
+        borderRadius: '0px !important',
         // padding: '0px 14px',
         padding: '10px 25px 10px 15px',
         backgroundColor: 'black',
@@ -122,10 +123,10 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: 'black',
             borderRadius: '0px',
             boxShadow: 'none',
-            width:'144px',
+            width: '144px',
             '& .MuiMenu-list': {
                 color: 'white',
-                
+
             },
         }
     },
@@ -135,10 +136,10 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: 'transparent',
             borderRadius: '0px',
             boxShadow: 'none',
-            width:'144px',
+            width: '144px',
             '& .MuiMenu-list': {
                 color: 'white',
-                
+
             },
         }
     }
@@ -165,6 +166,7 @@ const NavBar = (props) => {
     const handleDrawerToggle = () => {
         // setAnchorEl(null)
         setMobileOpen(!mobileOpen);
+        setindDrawerNavItem(-1)
     };
 
     const container = window !== undefined ? () => window().document.body : undefined;
@@ -178,20 +180,32 @@ const NavBar = (props) => {
             onKeyDown={handleDrawerToggle}
         >
             <List>
-                {navItems.map((item, index) => (
-                    <ListItem key={item.nav} disablePadding>
-                        <ListItemButton className={classes.navItemBtn} onClick={() => {
-                            if (!item.showIcon) {
-                                navigate(`${item.path}`);
-                            }
-                        }} >
-                            <ListItemText className={classes.listItem} primary={item.nav} />
-                            {item?.showIcon &&
-                                <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
-                            }
-                        </ListItemButton>
-                    </ListItem>
-                ))}
+                {navItems.map((item, index) => {
+                    let { XsComp } = item
+                    return (
+                        <ListItem key={item.nav} disablePadding style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }} >
+                            <ListItemButton className={classes.navItemBtn} onClick={() => {
+                                if (!item.showIcon) {
+                                    navigate(`${item.path}`);
+                                }
+                                else {
+                                    setindDrawerNavItem(indDrawerNavItem== index? -1 : index)
+                                }
+                            }} >
+                                <ListItemText className={classes.listItem} primary={item.nav} />
+                                {item?.showIcon &&
+                                    <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
+                                }
+                            </ListItemButton>
+                            {(item?.showIcon && indDrawerNavItem == index) && <div>
+                                {
+                                    <XsComp key={index} closeAppbarNavItem={handleDrawerToggle} />
+                                }
+                            </div>}
+                        </ListItem>
+                    )
+                }
+                )}
                 <ListItem disablePadding >
                     <ListItemButton className={classes.navItemBtn} >
                         <ListItemText className={classes.listItem} >
@@ -208,7 +222,7 @@ const NavBar = (props) => {
     }
 
 
-    const openAppbarNavItem = (event, haveMenu, path,ind) => {
+    const openAppbarNavItem = (event, haveMenu, path, ind) => {
         if (haveMenu) {
             setAnchorEl(event.currentTarget);
             setMenuOpenNumber(ind)
@@ -228,12 +242,12 @@ const NavBar = (props) => {
 
     const navItems = [
         { nav: 'About1047', showIcon: false, path: '/1047' },
-        { nav: 'Game Info', showIcon: true, MdComp: GameInfoMd },
+        { nav: 'Game Info', showIcon: true, MdComp: GameInfoMd, XsComp: GameInfoXs },
         { nav: 'faq', showIcon: false, path: '/faq' },
-        { nav: 'Community', showIcon: true, MdComp: CommunityMd  },
+        { nav: 'Community', showIcon: true, MdComp: CommunityMd, XsComp: CommunityXs },
         { nav: 'News', showIcon: false, path: '/news' },
-        { nav: 'Explore', showIcon: true, MdComp: ExploreMd },
-        { nav: 'Play Now', showIcon: true, MdComp: PlayNowMd }
+        { nav: 'Explore', showIcon: true, MdComp: ExploreMd, XsComp: ExploreXs },
+        { nav: 'Play Now', showIcon: true, MdComp: PlayNowMd, XsComp: PlayNowXs }
     ];
 
 
@@ -270,7 +284,7 @@ const NavBar = (props) => {
                                                 // aria-controls={open ? (Item + "menu") : undefined}
                                                 // aria-haspopup="true"
                                                 // aria-expanded={open ? 'true' : undefined}
-                                                onClick={(e) => openAppbarNavItem(e, Item.showIcon, Item?.path,ind)}
+                                                onClick={(e) => openAppbarNavItem(e, Item.showIcon, Item?.path, ind)}
                                             >
                                                 <Typography key={Item} className={classes.navItem} >
                                                     {Item.nav}
@@ -279,7 +293,7 @@ const NavBar = (props) => {
                                                     <KeyboardArrowDownIcon style={{ color: '#6DC2D3' }} />
                                                 }
                                             </Button>
-                                            {(Item?.showIcon && MenuOpenNumber == ind ) && <Menu
+                                            {(Item?.showIcon && MenuOpenNumber == ind) && <Menu
                                                 id={Item + "menu"}
                                                 anchorEl={anchorEl}
                                                 open={open}
@@ -289,7 +303,7 @@ const NavBar = (props) => {
                                                     'aria-labelledby': (Item + "button"),
                                                 }}
                                                 sx={{ display: { xs: 'none', md: 'flex' } }}
-                                                className={Item.nav == "Play Now"? classes.appBarMenuTransParent :classes.appBarMenu}
+                                                className={Item.nav == "Play Now" ? classes.appBarMenuTransParent : classes.appBarMenu}
                                                 key={ind}
                                             // style={{ backgroundColor: 'black' }}
                                             >
