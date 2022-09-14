@@ -7,6 +7,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import OutputOutlinedIcon from '@mui/icons-material/OutputOutlined';
+import TransparentBtn from './TransparentBtn';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -109,9 +110,8 @@ export const CommunityMd = ({ closeAppbarNavItem }) => {
                         <MenuItem
                             sx={{
                                 width: '100%',
-                                // backgroundColor:'yellow',
-                                display:'flex',
-                                justifyContent:'space-between'
+                                display: 'flex',
+                                justifyContent: 'space-between'
                             }}
                             key={i}
                             onClick={() => {
@@ -119,7 +119,7 @@ export const CommunityMd = ({ closeAppbarNavItem }) => {
 
                             }}
                         >{
-                                Menu.map(({ Icon }) => <div style={{  }} >{<Icon />}</div>)
+                                Menu.map(({ Icon }) => <div style={{}} >{<Icon />}</div>)
                             } </MenuItem>
                     )
                 })
@@ -160,6 +160,40 @@ export const ExploreMd = ({ closeAppbarNavItem }) => {
 
                             }}
                         >{menu.name} <OutputOutlinedIcon style={{ fontSize: '15px', color: '#4cc5f3', marginLeft: '5px', marginBottom: '3px' }} /> </MenuItem>
+                    )
+                })
+            }
+        </>
+    )
+}
+
+
+export const PlayNowMd = ({ closeAppbarNavItem }) => {
+    const classes = useStyles();
+    let subMenu = [
+        {
+            name: 'Steam',
+            link: 'https://store.steampowered.com/app/677620/Splitgate/'
+        },
+        {
+            name: 'Xbox',
+            link: "https://www.xbox.com/en-us/games/store/splitgate/9p4s1bpjlphz?rtc=1"
+        },
+        {
+            name: 'PlayStation',
+            link: 'https://store.playstation.com/en-us/product/UP5988-CUSA26225_00-SPLITGATEPS40000'
+        },
+    ];
+    return (
+        <>
+            {
+                subMenu.map((menu, i) => {
+                    return (
+                        <TransparentBtn key={i} text={menu.name} onClick={() => {
+                            closeAppbarNavItem()
+                        }}
+                        sx={{width:'100px',fontSize:'12px',margin:'5px 0px'}}
+                         />
                     )
                 })
             }

@@ -25,7 +25,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import PersonIcon from '@mui/icons-material/Person';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { GameInfoMd,CommunityMd,ExploreMd  } from "./MdMenuItem"
+import { GameInfoMd,CommunityMd,ExploreMd,PlayNowMd  } from "./MdMenuItem"
 import { useNavigate, Link } from "react-router-dom";
 
 
@@ -128,6 +128,19 @@ const useStyles = makeStyles((theme) => ({
                 
             },
         }
+    },
+    appBarMenuTransParent: {
+        '& .MuiPaper-root': {
+            padding: '0px 15px 0px 0px',
+            backgroundColor: 'transparent',
+            borderRadius: '0px',
+            boxShadow: 'none',
+            width:'144px',
+            '& .MuiMenu-list': {
+                color: 'white',
+                
+            },
+        }
     }
 }));
 
@@ -220,7 +233,7 @@ const NavBar = (props) => {
         { nav: 'Community', showIcon: true, MdComp: CommunityMd  },
         { nav: 'News', showIcon: false, path: '/news' },
         { nav: 'Explore', showIcon: true, MdComp: ExploreMd },
-        { nav: 'Play Now', showIcon: true, MdComp: GameInfoMd }
+        { nav: 'Play Now', showIcon: true, MdComp: PlayNowMd }
     ];
 
 
@@ -276,7 +289,7 @@ const NavBar = (props) => {
                                                     'aria-labelledby': (Item + "button"),
                                                 }}
                                                 sx={{ display: { xs: 'none', md: 'flex' } }}
-                                                className={classes.appBarMenu}
+                                                className={Item.nav == "Play Now"? classes.appBarMenuTransParent :classes.appBarMenu}
                                                 key={ind}
                                             // style={{ backgroundColor: 'black' }}
                                             >

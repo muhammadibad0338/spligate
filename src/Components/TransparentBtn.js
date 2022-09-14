@@ -61,9 +61,9 @@ const Btn = styled(Button)(({ theme }) => ({
 }))
 
 
-const TransparentBtn = ({text,sx,Icon}) => {
+const TransparentBtn = ({text,sx,Icon,...props}) => {
     return (
-        <Btn variant='outlined' sx={sx} > {text ? text : <Icon/> }</Btn>
+        <Btn variant='outlined' sx={sx} {...props} > {text ? text : <Icon/> }</Btn>
     )
 }
 
